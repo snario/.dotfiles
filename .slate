@@ -1,0 +1,81 @@
+# GLOBAL CONFIGURATIONS
+# -------------------------------------------------------------------
+# See https://github.com/jigish/slate/wiki/Global-Configs
+
+config defaultToCurrentScreen true
+config secondsBeforeRepeat 0.4
+config secondsBetweenRepeat 0.1
+config keyboardLayout "qwerty"
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# HYPER KEY
+# -------------------------------------------------------------------
+# The "hyper" key is a shortcut for CTRL + ALT + CMD
+
+alias hyper ctrl;alt;cmd
+
+# MONITOR ALIASES
+# -------------------------------------------------------------------
+
+alias monitor-macbook 1440x900
+alias monitor-samsung 1920×1080
+
+# MONITOR-BASED POSITION ALIASES
+# -------------------------------------------------------------------
+# These aliases are move windows to specific positions on a specific
+# monitor.
+
+# Laptop monitor
+alias macbook-full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${monitor-macbook}
+alias macbook-lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY ${monitor-macbook}
+alias macbook-righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY ${monitor-macbook}
+alias macbook-leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY ${monitor-macbook}
+alias macbook-righttwothirds move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY ${monitor-macbook}
+alias macbook-leftfifth move screenOriginX;screenOriginY screenSizeX/5;screenSizeY ${monitor-macbook}
+alias macbook-rightfourfifths move (screenOriginX+screenSizeX/5)+45;screenOriginY (4*screenSizeX/5)-45;screenSizeY ${monitor-macbook}
+alias macbook-tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2 ${monitor-macbook}
+alias macbook-bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2 ${monitor-macbook}
+
+# Dell monitor
+alias samsung-full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${monitor-samsung}
+alias samsung-lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY ${monitor-samsung}
+alias samsung-righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY ${monitor-samsung}
+alias samsung-leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY ${monitor-samsung}
+alias samsung-righttwothirds move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY ${monitor-samsung}
+alias samsung-leftfifth move screenOriginX;screenOriginY screenSizeX/5;screenSizeY ${monitor-samsung}
+alias samsung-rightfourfifths move (screenOriginX+screenSizeX/5)+14;screenOriginY (4*screenSizeX/5)-14;screenSizeY ${monitor-samsung}
+alias samsung-tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2 ${monitor-samsung}
+alias samsung-bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2 ${monitor-samsung}
+
+
+# BINDINGS
+# -------------------------------------------------------------------
+# Mostly taken from
+# https://github.com/jigish/slate/blob/master/Slate/default.slate
+
+# Throw
+bind ]:${hyper} throw right resize full
+bind [:${hyper}  throw left resize full
+
+# Resize
+bind right:alt       resize +10% +0
+bind left:alt        resize -10% +0
+bind up:alt          resize +0   -10%
+bind down:alt        resize +0   +10%
+bind right:ctrl;alt  resize -10% +0 bottom-right
+bind left:ctrl;alt   resize +10% +0 bottom-right
+bind up:ctrl;alt     resize +0   +10% bottom-right
+bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# Nudge
+bind right:${hyper} nudge +10% +0
+bind left:${hyper}  nudge -10% +0
+bind up:${hyper}    nudge +0   -10%
+bind down:${hyper}  nudge +0   +10%
+
+# Push
+bind up:cmd         ${samsung-full}
+bind left:cmd       ${samsung-lefthalf}
+bind right:cmd       ${samsung-righthalf}
+bind down:cmd       ${samsung-bottomhalf}
