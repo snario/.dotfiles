@@ -179,7 +179,7 @@ alias lsdirs="ls -l | grep '^d'"
 alias vim="vim -X"
 
 # git statuus
-alias wow="git status"
+alias wow="git st"
 
 # Sort files by Size
 alias sortbysize="ls -s | sort -n"

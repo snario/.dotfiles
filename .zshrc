@@ -52,14 +52,20 @@ export LANG=en_US.UTF-8
 
 master='piinpoint.com'
 staging='staging.piinpoint.com'
+rmongo='54.69.39.13'
+drive_na='54.68.175.15'
+drive_world='54.200.166.86'
 
-alias master='ssh ec2-user@$master'
-alias staging='ssh ec2-user@$staging'
+
+
+alias master='ssh ubuntu@$master'
+alias staging='ssh ubuntu@$staging'
 alias mongoserve='ssh ec2-user@$rmongo'
 alias drivenaserver='ssh ubuntu@$drive_na'
 alias driveworldserver='ssh ubuntu@$drive_world'
 
-alias p='cd ~/piinpoint'
+alias p='cd ~/piinpoint && source ~/.virtualenv/piinpoint/bin/activate'
+alias src='source ~/.virtualenv/piinpoint/bin/activate'
 alias ls='ls -G'
 alias opensb='open -a Sublime\ Text\ 3'
 

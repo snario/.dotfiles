@@ -33,6 +33,17 @@ function is-blank-dvd {
   done
 }
 
+# Pull Request in one command
+# Example:
+#     mpr "Added sp"
+function mpr() {
+    git commit -am "init commit"
+    branch=`git rev-parse --abbrev-ref HEAD`
+    git push -u origin $branch
+    hub pull-request -b develop
+}
+
+
 # choose a random wallpaper
 function randomwp() {
     local PIC=$(ls ${HOME}/Pictures/backgrounds | sort -R | head -1)
