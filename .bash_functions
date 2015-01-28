@@ -1,4 +1,6 @@
-# Where/What is this binary? Shows extended ls output
+#!/bin/bash
+#
+## Where/What is this binary? Shows extended ls output
 function what() {
     which $1 | xargs ls -la
 }

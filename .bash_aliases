@@ -1,4 +1,6 @@
-function scoreboard () {
+#!/bin/bash
+#
+#function scoreboard () {
   git log | grep Author | sort | uniq -ci | sort -r
 }
 

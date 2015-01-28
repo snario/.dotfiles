@@ -1,3 +1,5 @@
+#!/bin/bash
+
 alias ps1reload='PS1="\[\e[01;30m\]\t \[\e[0;30m\][\[${RED}\]\W\[${BLACK}\]]`[[ $(git status 2> /dev/null | head -n2 | tail -n1) != "# Changes to be committed:" ]] && echo "\[\e[91m\]" || echo "\[\e[32m\]"``[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] || echo "\[\e[32m\]"`$(__git_ps1 " (%s)\[\e[00m\]") ❯❯❯ \[${BLACK}\]"'
 
 
