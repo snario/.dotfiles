@@ -1,0 +1,27 @@
+"*":
+  core:
+    themes: [
+      "flatland-dark-ui"
+      "flatland-dark"
+    ]
+    disabledPackages: [
+      "tree-view"
+    ]
+  editor:
+    invisibles: {}
+    fontSize: 12
+  linter: {}
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  react: {}
+  "save-session":
+    dataSaveFolder: "/Users/lihorne/.atom/packages/save-session/projects"
+  "exception-reporting":
+    userId: "2da1d331-319b-ecb4-fafd-47d41a256da9"
+  welcome:
+    showOnStartup: false
+  nuclide:
+    remoteProjectsConfig: []
+".ini.source":
+  editor:
+    preferredLineLength: 100
