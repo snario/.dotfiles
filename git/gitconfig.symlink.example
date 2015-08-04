@@ -12,7 +12,7 @@
         st = status
         co = checkout
         ac = !git add -A && git commit
-        up = "!git remote update -p; git merge --ff-only @{u}"
+        up = "git-up"
 [color]
         diff = auto
         status = auto
