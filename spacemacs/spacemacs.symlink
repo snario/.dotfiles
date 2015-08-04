@@ -186,6 +186,7 @@ layers configuration."
   ;;
   ;; UI
   ;;
+  (global-linum-mode)  ; show line numbers by default
   (setq powerline-default-separator 'arrow)
 
   ;;
@@ -252,6 +253,7 @@ layers configuration."
                  "* %?\n%U\n" :clock-in t :clock-resume t)
                 ("m" "meeting" entry (file org-default-notes-file)
                  "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t))))
+
 
   ;; syntax highlighting for .mako files in web-mode
   (add-to-list 'auto-mode-alist '("\\.mako\\'" . web-mode))
