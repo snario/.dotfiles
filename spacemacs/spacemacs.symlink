@@ -95,7 +95,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro for Powerline"
-                               :size 14
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -191,17 +191,14 @@ layers configuration."
   ;;
   ;; custom functions
   ;;
-
   (defun notes ()
     "Switch to my work dir."
     (interactive)
-    (find-file "~/Dropbox/.notes")
-    )
+    (find-file "~/Dropbox/.notes"))
 
   ;;
   ;; user keybindings
   ;;
-
   (evil-leader/set-key
     "oc" 'org-capture
     "on" 'notes)
@@ -255,6 +252,9 @@ layers configuration."
                  "* %?\n%U\n" :clock-in t :clock-resume t)
                 ("m" "meeting" entry (file org-default-notes-file)
                  "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t))))
+
+  ;; syntax highlighting for .mako files in web-mode
+  (add-to-list 'auto-mode-alist '("\\.mako\\'" . web-mode))
 
   ;; add newline at end of file
   (setq require-final-newline 'visit-save)
