@@ -2,12 +2,12 @@
 #
 
 [hub]
-        protocol = https
+	protocol = https
 [user]
         name = lihorne
         email = lihorne@uwaterloo.ca
 [credential]
-        helper = osxkeychain
+	helper = osxkeychain
 [alias]
         co = checkout
         st = status

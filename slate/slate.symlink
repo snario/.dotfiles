@@ -83,6 +83,6 @@ bind down:cmd       ${samsung-bottomhalf}
 # Run Applications
 bind esc:cmd shell /Applications/iTerm\ 2.app/Contents/MacOS/iTerm
 bind 1:cmd focus 'Google Chrome'
-bind 2:cmd focus 'Atom'
+bind 2:cmd focus 'iTerm'
 bind 3:cmd focus 'iTerm'
 bind 4:cmd focus 'Slack'
