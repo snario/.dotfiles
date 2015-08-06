@@ -244,7 +244,7 @@ layers configuration."
         (quote (("t" "todo" entry (file org-default-notes-file)
                  "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
                 ("r" "respond" entry (file org-default-notes-file)
-                 "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+                 "* NEXT Respond to %?\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t)
                 ("n" "note" entry (file org-default-notes-file)
                  "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
                 ("j" "journal" entry (file+datetree "~/Dropbox/.notes/journal.org")
@@ -253,7 +253,6 @@ layers configuration."
                  "* %?\n%U\n" :clock-in t :clock-resume t)
                 ("m" "meeting" entry (file org-default-notes-file)
                  "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t))))
-
 
   ;; syntax highlighting for .mako files in web-mode
   (add-to-list 'auto-mode-alist '("\\.mako\\'" . web-mode))
