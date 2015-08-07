@@ -200,14 +200,21 @@ layers configuration."
   ;;
   ;; user keybindings
   ;;
+
+  ; org-mode bindings
   (evil-leader/set-key
     "oc" 'org-capture
     "on" 'notes)
 
+  ; scroll bindings
   (defun up-slightly () (interactive) (scroll-up 5))
   (defun down-slightly () (interactive) (scroll-down 5))
   (global-set-key (kbd "<mouse-4>") 'down-slightly)
   (global-set-key (kbd "<mouse-5>") 'up-slightly)
+
+  ; indenting bindings
+  (global-set-key (kbd "<tab>") 'indent-rigidly-right-to-tab-stop)
+  (global-set-key (kbd "<S-tab>") 'indent-rigidly-left-to-tab-stop)
 
   ;;
   ;; org mode config
