@@ -39,3 +39,6 @@
 	      check = false
 [git-up "fetch"]
 	      all = true
+[github]
+	user = snario
+[ghi]
