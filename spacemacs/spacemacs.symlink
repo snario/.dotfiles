@@ -280,8 +280,8 @@ layers configuration."
                  "* %?\n%U\n" :clock-in t :clock-resume t)
                 ("s" "someday" entry (file+datetree "~/Dropbox/.notes/someday.org")
                  "* %?\n%U\n" :clock-in t :clock-resume t)
-                ("m" "meeting" entry (file org-default-notes-file)
-                 "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t))))
+                ("m" "meeting" entry (file+datetree "~/Dropbox/.notes/meetings.org")
+                 "* %? :MEETING:\n%U" :clock-in t :clock-resume t))))
 
   ;; syntax highlighting for .mako files in web-mode
   (add-to-list 'auto-mode-alist '("\\.mako\\'" . web-mode))
