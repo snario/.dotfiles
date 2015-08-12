@@ -24,6 +24,7 @@
      emacs-lisp
      themes-megapack
      git
+     (ibuffer :variables ibuffer-group-buffers-by 'projects)
      markdown
      restclient
      eyebrowse
