@@ -192,6 +192,7 @@ layers configuration."
   (global-linum-mode)  ; show line numbers by default
   (setq powerline-default-separator 'arrow)
 
+
   ; eyebrowse new workspace shows empty buffer
   (defvar spacemacs-active-slots nil)
 
@@ -220,6 +221,8 @@ layers configuration."
   ;;
   ;; user keybindings
   ;;
+
+  (setq-default evil-escape-key-sequence "<Ctrl-c>")
 
   ; org-mode bindings
   (evil-leader/set-key
