@@ -277,17 +277,17 @@ layers configuration."
   ;; org-capture types
   (setq org-capture-templates
         (quote (("t" "todo" entry (file org-default-notes-file)
-                 "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+                 "* TODO %?\n%U\n%a\n")
                 ("r" "respond" entry (file org-default-notes-file)
-                 "* NEXT Respond to %?\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t)
+                 "* NEXT Respond to %?\nSCHEDULED: %t\n%U\n%a\n")
                 ("n" "note" entry (file org-default-notes-file)
-                 "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+                 "* %? :NOTE:\n%U\n%a\n")
                 ("j" "journal" entry (file+datetree "~/Dropbox/.notes/journal.org")
-                 "* %?\n%U\n" :clock-in t :clock-resume t)
+                 "* %?\n%U\n")
                 ("s" "someday" entry (file+datetree "~/Dropbox/.notes/someday.org")
-                 "* %?\n%U\n" :clock-in t :clock-resume t)
+                 "* %?\n%U\n")
                 ("m" "meeting" entry (file+datetree "~/Dropbox/.notes/meetings.org")
-                 "* %? :MEETING:\n%U" :clock-in t :clock-resume t))))
+                 "* %? :MEETING:\n%U"))))
 
   ;; syntax highlighting for .mako files in web-mode
   (add-to-list 'auto-mode-alist '("\\.mako\\'" . web-mode))
