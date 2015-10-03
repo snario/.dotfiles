@@ -28,6 +28,7 @@
      smex
      markdown
      restclient
+     multiple-cursors
      evil-commentary
      eyebrowse
      python
@@ -192,8 +193,7 @@ layers configuration."
   (global-linum-mode)  ; show line numbers by default
   (setq powerline-default-separator 'arrow)
 
-
-  ; eyebrowse new workspace shows empty buffer
+  ;; eyebrowse new workspace shows empty buffer
   (defvar spacemacs-active-slots nil)
 
   (defun spacemacs-eyebrowe-maybe-switch-home ()
@@ -223,6 +223,10 @@ layers configuration."
   ;;
 
   (setq-default evil-escape-key-sequence "<Ctrl-c>")
+
+  ; multiple-cursor key bindings
+  (global-set-key (kbd "s-d") 'mc/mark-next-like-this)
+  (global-set-key (kbd "s-<mouse-1>") 'mc/add-cursor-on-click)
 
   ; org-mode bindings
   (evil-leader/set-key
@@ -288,6 +292,15 @@ layers configuration."
                  "* %?\n%U\n")
                 ("m" "meeting" entry (file+datetree "~/Dropbox/.notes/meetings.org")
                  "* %? :MEETING:\n%U"))))
+
+  (setq org-agenda-custom-commands
+        '( ("D" "Daily Action List"
+            (
+             (agenda "" ((org-agenda-ndays 1)
+                         (org-agenda-sorting-strategy
+                          (quote ((agenda time-up priority-down tag-up) )))
+                         (org-deadline-warning-days 0)
+                         ))))))
 
   ;; syntax highlighting for .mako files in web-mode
   (add-to-list 'auto-mode-alist '("\\.mako\\'" . web-mode))
