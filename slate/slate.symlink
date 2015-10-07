@@ -81,7 +81,6 @@ bind right:cmd       ${samsung-righthalf}
 bind down:cmd       ${samsung-bottomhalf}
 
 # Run Applications
-bind esc:cmd shell /Applications/iTerm\ 2.app/Contents/MacOS/iTerm
 bind f1:cmd focus 'Emacs'
 bind 1:cmd focus 'Google Chrome'
 bind 2:cmd focus 'Sublime Text'
