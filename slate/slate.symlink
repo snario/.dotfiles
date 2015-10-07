@@ -15,38 +15,16 @@ config resizePercentOf screenSize
 
 alias hyper ctrl;alt;cmd
 
-# MONITOR ALIASES
-# -------------------------------------------------------------------
-
-alias monitor-macbook 1440x900
-alias monitor-samsung 1920×1080
-
-# MONITOR-BASED POSITION ALIASES
-# -------------------------------------------------------------------
-# These aliases are move windows to specific positions on a specific
-# monitor.
-
-# Laptop monitor
-alias macbook-full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${monitor-macbook}
-alias macbook-lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY ${monitor-macbook}
-alias macbook-righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY ${monitor-macbook}
-alias macbook-leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY ${monitor-macbook}
-alias macbook-righttwothirds move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY ${monitor-macbook}
-alias macbook-leftfifth move screenOriginX;screenOriginY screenSizeX/5;screenSizeY ${monitor-macbook}
-alias macbook-rightfourfifths move (screenOriginX+screenSizeX/5)+45;screenOriginY (4*screenSizeX/5)-45;screenSizeY ${monitor-macbook}
-alias macbook-tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2 ${monitor-macbook}
-alias macbook-bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2 ${monitor-macbook}
-
-# Dell monitor
-alias samsung-full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${monitor-samsung}
-alias samsung-lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY ${monitor-samsung}
-alias samsung-righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY ${monitor-samsung}
-alias samsung-leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY ${monitor-samsung}
-alias samsung-righttwothirds move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY ${monitor-samsung}
-alias samsung-leftfifth move screenOriginX;screenOriginY screenSizeX/5;screenSizeY ${monitor-samsung}
-alias samsung-rightfourfifths move (screenOriginX+screenSizeX/5)+14;screenOriginY (4*screenSizeX/5)-14;screenSizeY ${monitor-samsung}
-alias samsung-tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2 ${monitor-samsung}
-alias samsung-bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2 ${monitor-samsung}
+alias monitor 1920×1080
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${monitor}
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY ${monitor}
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY ${monitor}
+alias leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY ${monitor}
+alias righttwothirds move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY ${monitor}
+alias leftfifth move screenOriginX;screenOriginY screenSizeX/5;screenSizeY ${monitor}
+alias rightfourfifths move (screenOriginX+screenSizeX/5)+14;screenOriginY (4*screenSizeX/5)-14;screenSizeY ${monitor}
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2 ${monitor}
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2 ${monitor}
 
 
 # BINDINGS
@@ -75,14 +53,14 @@ bind up:${hyper}    nudge +0   -10%
 bind down:${hyper}  nudge +0   +10%
 
 # Push
-bind up:cmd         ${samsung-full}
-bind left:cmd       ${samsung-lefthalf}
-bind right:cmd       ${samsung-righthalf}
-bind down:cmd       ${samsung-bottomhalf}
+bind up:cmd         ${full}
+bind left:cmd       ${lefthalf}
+bind right:cmd      ${righthalf}
+bind down:cmd       ${bottomhalf}
 
 # Run Applications
 bind f1:cmd focus 'Emacs'
-bind 1:cmd focus 'Google Chrome'
-bind 2:cmd focus 'Sublime Text'
-bind 3:cmd focus 'iTerm'
-bind 4:cmd focus 'Slack'
+bind 1:cmd  focus 'Google Chrome'
+bind 2:cmd  focus 'Sublime Text'
+bind 3:cmd  focus 'iTerm'
+bind 4:cmd  focus 'Slack'
