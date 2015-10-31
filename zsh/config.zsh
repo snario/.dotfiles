@@ -5,7 +5,6 @@ ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="lihorne"
 ZSH_THEME="agnoster"
 DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 SHELL=/bin/zsh
 PROFILE=~/.zshrc

@@ -28,15 +28,13 @@
      smex
      markdown
      restclient
-     multiple-cursors
      evil-commentary
      eyebrowse
+     ;evil-mc
      python
-     projectile
      react
      javascript
      html
-     session
      github
      (org :variables
           org-enable-github-support t)
@@ -45,7 +43,6 @@
             shell-default-position 'bottom)
      syntax-checking
      osx
-     jsx-mode
      version-control
      )
    ;; List of additional packages that will be installed without being
@@ -210,6 +207,8 @@ layers configuration."
 
   (advice-add  'eyebrowse-close-window-config :after #'spacemacs-eyebrowse-remove-slot)
 
+  (global-evil-mc-mode  1) ;; enable
+
   ;;
   ;; custom functions
   ;;
@@ -223,10 +222,6 @@ layers configuration."
   ;;
 
   (setq-default evil-escape-key-sequence "<Ctrl-c>")
-
-  ; multiple-cursor key bindings
-  (global-set-key (kbd "s-d") 'mc/mark-next-like-this)
-  (global-set-key (kbd "s-<mouse-1>") 'mc/add-cursor-on-click)
 
   ; org-mode bindings
   (evil-leader/set-key
@@ -276,16 +271,13 @@ layers configuration."
 
   ;; org-capture
   (setq org-directory "~/Dropbox/.notes")
-  (setq org-default-notes-file "~/Dropbox/.notes/newgtd.org")
-
+  (setq org-default-notes-file "~/Dropbox/.notes/journal.org")
+  (setq org-default-journal-file "~/Dropbox/.notes/journal.org")
+  
   ;; org-capture types
   (setq org-capture-templates
-        (quote (("t" "todo" entry (file org-default-notes-file)
+        (quote (("t" "todo" entry (file+datetree org-default-notes-file)
                  "* TODO %?\n%U\n%a\n")
-                ("r" "respond" entry (file org-default-notes-file)
-                 "* NEXT Respond to %?\nSCHEDULED: %t\n%U\n%a\n")
-                ("n" "note" entry (file org-default-notes-file)
-                 "* %? :NOTE:\n%U\n%a\n")
                 ("j" "journal" entry (file+datetree "~/Dropbox/.notes/journal.org")
                  "* %?\n%U\n")
                 ("s" "someday" entry (file+datetree "~/Dropbox/.notes/someday.org")
@@ -293,14 +285,31 @@ layers configuration."
                 ("m" "meeting" entry (file+datetree "~/Dropbox/.notes/meetings.org")
                  "* %? :MEETING:\n%U"))))
 
-  (setq org-agenda-custom-commands
-        '( ("D" "Daily Action List"
-            (
-             (agenda "" ((org-agenda-ndays 1)
-                         (org-agenda-sorting-strategy
-                          (quote ((agenda time-up priority-down tag-up) )))
-                         (org-deadline-warning-days 0)
-                         ))))))
+  (defun org-refile-to-datetree (&optional file)
+    "Refile a subtree to a datetree corresponding to it's timestamp.
+
+    The current time is used if the entry has no timestamp. If FILE
+    is nil, refile in the current file."
+    (interactive)
+    (let* ((datetree-date (or (org-entry-get nil "CLOSED" t)
+                              (org-read-date t nil "now")))
+           (date (org-date-to-gregorian datetree-date))
+           )
+      (save-excursion
+        (with-current-buffer (current-buffer)
+          (org-cut-subtree)
+          (if file (find-file org-default-journal-file))
+          (org-datetree-find-date-create date)
+          (org-narrow-to-subtree)
+          (show-subtree)
+          (org-end-of-subtree t)
+          (newline)
+          (goto-char (point-max))
+          (org-paste-subtree 4)
+          (widen)
+          ))
+      )
+    )
 
   ;; syntax highlighting for .mako files in web-mode
   (add-to-list 'auto-mode-alist '("\\.mako\\'" . web-mode))
@@ -309,9 +318,8 @@ layers configuration."
   (setq require-final-newline 'visit-save)
 
 )
-
-
- (custom-set-faces
+ 
+(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
@@ -329,7 +337,5 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
- '(org-agenda-files
-   (quote
-    ("/Users/lihorne/.notes/journal.org" "/Users/lihorne/dev/org/newgtd.org" "/Users/lihorne/dev/org/refile.org" "/Users/lihorne/dev/org/someday.org")))
+ '(org-agenda-files nil)
  '(ring-bell-function (quote ignore) t))

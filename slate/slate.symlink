@@ -16,9 +16,9 @@ config resizePercentOf screenSize
 alias hyper ctrl;alt;cmd
 
 alias monitor 1920×1080
-alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${monitor}
-alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY ${monitor}
-alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY ${monitor}
+alias full move screenOriginX-4;screenOriginY screenSizeX+4;screenSizeY ${monitor}
+alias lefthalf move screenOriginX-4;screenOriginY (screenSizeX+4)/2;screenSizeY ${monitor}
+alias righthalf move (screenOriginX-4)+(screenSizeX+4)/2;screenOriginY (screenSizeX+3)/2;screenSizeY ${monitor}
 alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2 ${monitor}
 
 # BINDINGS
