@@ -1,0 +1,3 @@
+[submodule "vim/vim_runtime.symlink"]
+	path = vim/vim_runtime.symlink
+	url = https://github.com/amix/vimrc
