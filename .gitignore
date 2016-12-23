@@ -100,3 +100,13 @@ phantomjsdriver.log
 .env
 .floo
 .flooignore
+
+###########
+#   Atom  #
+###########
+.apm
+atom.symlink/.node-gyp
+atom.symlink/blob-store
+atom.symlink/compile-cache
+atom.symlink/packages
+atom.symlink/storage

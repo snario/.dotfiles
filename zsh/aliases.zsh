@@ -51,3 +51,7 @@ alias grep="grep --color=auto"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+
+# Some more fun ones
+alias wow="git status"
+alias dc="docker-compose"
