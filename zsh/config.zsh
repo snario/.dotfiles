@@ -9,7 +9,7 @@ COMPLETION_WAITING_DOTS="true"
 SHELL=/bin/zsh
 PROFILE=~/.zshrc
 
-plugins=(git npm osx sublime atom)
+plugins=(git npm osx sublime atom docker)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -1,12 +1,12 @@
 "*":
+  "autohide-tree-view": {}
   core:
-    disabledPackages: [
-      "tree-view"
-    ]
     telemetryConsent: "no"
+    useCustomTitleBar: true
   editor:
-    fontSize: 12
+    fontSize: 13
     invisibles: {}
+    softWrap: true
   "exception-reporting":
     userId: "2da1d331-319b-ecb4-fafd-47d41a256da9"
   "file-watcher":
@@ -17,6 +17,8 @@
   react: {}
   "save-session":
     dataSaveFolder: "/Users/lihorne/.atom/packages/save-session/projects"
+  "tree-view":
+    showOnRightSide: true
   welcome:
     showOnStartup: false
 ".ini.source":
