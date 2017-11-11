@@ -1,10 +1,14 @@
 "*":
   "autohide-tree-view": {}
   core:
+    disabledPackages: [
+      "no-title-bar"
+      "autohide-tree-view"
+    ]
     telemetryConsent: "no"
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
-    fontSize: 13
+    fontSize: 12
     invisibles: {}
     softWrap: true
   "exception-reporting":
