@@ -55,3 +55,6 @@ alias mv="mv -i"
 # Some more fun ones
 alias wow="git status"
 alias dc="docker-compose"
+
+# Reload config
+alias reload="source ~/.zshrc"

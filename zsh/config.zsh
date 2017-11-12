@@ -46,4 +46,4 @@ export CLICOLOR=true
 export GREP_OPTIONS='--color=auto'
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
-
+export TERM="xterm-256color"
