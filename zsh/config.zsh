@@ -9,7 +9,7 @@ COMPLETION_WAITING_DOTS="true"
 SHELL=/bin/zsh
 PROFILE=~/.zshrc
 
-plugins=(git npm osx sublime atom docker)
+plugins=(git npm osx vscode sublime atom docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,3 +47,7 @@ export GREP_OPTIONS='--color=auto'
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export TERM="xterm-256color"
+
+prompt_dir() {
+    prompt_segment blue black "%-53<...<%~%<<"
+}

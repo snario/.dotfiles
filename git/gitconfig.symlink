@@ -4,8 +4,8 @@
 [hub]
 	protocol = https
 [user]
-        name = lihorne
-        email = lihorne@uwaterloo.ca
+        name = snario
+        email = liam@lihorne.com 
 [credential]
 	helper = osxkeychain
 [alias]
@@ -41,4 +41,3 @@
 	      all = true
 [github]
 	user = snario
-[ghi]

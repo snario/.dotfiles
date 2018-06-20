@@ -16,6 +16,7 @@
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
   linter: {}
+  "linter-ui-default": {}
   nuclide:
     remoteProjectsConfig: []
   react: {}
