@@ -1,3 +1,6 @@
 [submodule "vim/vim_runtime.symlink"]
 	path = vim/vim_runtime.symlink
 	url = https://github.com/amix/vimrc
+[submodule "git-subrepo"]
+	path = git-subrepo
+	url = https://github.com/ingydotnet/git-subrepo.git

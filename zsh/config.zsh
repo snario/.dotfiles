@@ -51,3 +51,4 @@ export TERM="xterm-256color"
 prompt_dir() {
     prompt_segment blue black "%-53<...<%~%<<"
 }
+
