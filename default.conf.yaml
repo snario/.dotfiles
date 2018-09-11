@@ -1,0 +1,29 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+      force: true # We are opinionated.
+
+- clean: ['~']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+
+- link:
+    ~/.gitconfig: git/config
+    ~/.config/htop/htoprc: htop/htoprc
+    ~/.nanorc: nano/nanorc
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.grc: grc
+    ~/.toprc : top/toprc
+    ~/.vimrc: vim/vimrc
+    ~/.vim/autoload: vim/autoload
+    ~/.zshrc: zsh/zshrc
+    ~/.dotfiles/.git/hooks/post-checkout: git/hooks/post-checkout
+    ~/.dotfiles/.git/hooks/post-merge: git/hooks/post-merge
+    ~/.dotfiles/.git/hooks/post-commit: git/hooks/post-commit
+    ~/bin/tm: tmux/tmux-menu
+
+- shell:
+  - [printf "\n" | vim +PlugInstall +PlugUpdate +qall, Installing vim plugins]

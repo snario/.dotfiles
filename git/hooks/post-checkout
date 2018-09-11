@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# MIT © Sindre Sorhus - sindresorhus.com
+
+# git hook to run a command after `git pull` or `git checkout` if a specified file was changed
+# Run `chmod +x post-checkout` to make it executable then put it into `.git/hooks/`.
+
+changed_files="$(git diff-tree -r --name-only --no-commit-id HEAD@{1} HEAD)"
+
+check_run() {
+	echo "$changed_files" | grep --quiet "$1" && echo " * changes detected in $1" && echo " *
+running $2" && eval "$2"
+}
+
+# run installer script for new links
+check_run .conf.yaml "~/.dotfiles/install"
+
+# run upgrade script for cleanup
+check_run upgrade.sh "~/.dotfiles/upgrade.sh"
+
+# reload zsh
+check_run zsh "zsh -c 'source ~/.zshrc'"
+
+# istall vim plugsin
+check_run vim "(printf '\n' | vim +PlugInstall +PlugUpdate +qall)"
+
+if [[ $OSTYPE == 'linux-gnu' ]]; then
+    # Generate i3 config if changes detected
+    check_run i3 "~/.dotfiles/i3/genconf"
+elif [[ $OSTYPE == darwin* ]]; then
+    # restart OSX window managers
+    check_run skhdrc "skhd -e 'reload'"
+    check_run chunkwmrc "brew services restart chunkwm"
+fi
+

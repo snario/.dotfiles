@@ -1,0 +1,75 @@
+######################
+## basic zsh config ##
+
+# Set vim keybinds first, so that all plugins know about it.
+bindkey -v
+
+# EDITOR is vim.
+export EDITOR=vim
+# Save each command's timestamp and duration.
+setopt EXTENDED_HISTORY
+
+# Expand '=command' as path of command
+# e.g.) '=ls' -> '/bin/ls'
+setopt EQUALS
+
+# Incrementally append history instead of waiting for exit to write out.
+setopt INC_APPEND_HISTORY
+
+# Ignore duplicate commands.
+setopt HIST_IGNORE_ALL_DUPS
+
+# Ignore commands that start with a space.
+setopt HIST_IGNORE_SPACE
+
+# Reduce blanks in history.
+setopt HIST_REDUCE_BLANKS
+
+# Allow for history expansion.
+setopt HIST_VERIFY
+
+# Don't clobber files accidentally.
+setopt NOCLOBBER
+
+# Evaluate prompt each time it is shown. Allows embedding commands.
+setopt PROMPT_SUBST
+
+# Show command execution time stamp in history.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="yyyy-mm-dd"
+
+# long date format in ls(1)
+# https://www.gnu.org/software/coreutils/manual/html_node/Formatting-file-timestamps.html
+export TIME_STYLE=long-iso
+
+######################
+## oh-my-zsh config ##
+export ZSH=$HOME/.dotfiles/oh-my-zsh
+
+ZSH_THEME="ivan"
+
+plugins=(git git-extras zsh-autosuggestions zsh-completions alias-tips history)
+plugins+=(fasd brew brew-cask common-aliases osx tmux taskwarrior extract adb vagrant zsh-completions docker vscode)
+
+DISABLE_AUTO_UPDATE=true
+
+# oh-my-zsh/lib/key-bindings.zsh sets emacs mode, so we source and reset to vim
+source $ZSH/oh-my-zsh.sh # note that this comes AFTER plugins sourced.
+bindkey -v
+
+
+##################################################
+# Load custom config last, so it takes priority ##
+find ~/.dotfiles/zsh/config ~/.dotfiles/zsh/aliases -type f -name '*.zsh' -print0 | sort -z |
+while IFS= read -r -d $'\0' line; do
+	source "$line"
+done
+
+# Enable all completions
+autoload -U compinit && compinit
+
+# As per instructions, load this last so that it wraps ZLE widgets.
+source ~/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Load local config if present, for final overrides.
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

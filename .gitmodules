@@ -1,6 +1,12 @@
-[submodule "vim/vim_runtime.symlink"]
-	path = vim/vim_runtime.symlink
-	url = https://github.com/amix/vimrc
-[submodule "git-subrepo"]
-	path = git-subrepo
-	url = https://github.com/ingydotnet/git-subrepo.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/issmirnov/oh-my-zsh.git
+[submodule "zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

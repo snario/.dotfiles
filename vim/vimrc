@@ -1,0 +1,222 @@
+filetype off
+filetype plugin indent on    " required
+
+" The following block sets up vim-plug. Check github for README.
+call plug#begin('~/.vim/plugged')
+
+" colors
+Plug 'jacoborus/tender'
+
+" statusline
+Plug 'itchyny/lightline.vim'
+
+" comments
+Plug 'tpope/vim-commentary'
+
+" better tabs (try ":Tab /=" in a config file)
+Plug 'godlygeek/tabular'
+
+" additional file types
+"Plug 'fatih/vim-nginx'
+
+" Expand region - press v repeatedly
+Plug 'terryma/vim-expand-region'
+
+" sample demo commit
+
+" start screen plugin.
+Plug 'https://github.com/mhinz/vim-startify'
+
+" ansible packages
+Plug 'pearofducks/ansible-vim', {'for': ['ansible']}
+
+" dart support
+Plug 'dart-lang/dart-vim-plugin'
+
+"go packages", lazy loaded for better startup
+Plug 'fatih/vim-go', {'for': ['go'], 'do': [':GoInstallBinaries', ':GoUpdateBinaries']}
+" better go autocomplete
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+" general syntax
+Plug 'https://github.com/sheerun/vim-polyglot'
+Plug 'https://github.com/tpope/vim-sleuth' " proper tabstops 
+
+" git helpers
+Plug 'https://github.com/jreybert/vimagit',                       {'branch': 'next', 'on': ['Magit', 'MagitOnly']}
+Plug 'https://github.com/airblade/vim-gitgutter'
+
+" basic system utils
+Plug 'https://github.com/tpope/vim-eunuch'
+
+" Awesome navigation
+Plug 'https://github.com/justinmk/vim-sneak'
+
+" Open files from grep results
+Plug 'https://github.com/wsdjeg/vim-fetch'
+
+call plug#end()
+
+"" Basics
+syntax enable
+set encoding=utf-8
+set showcmd                     " display incomplete commands
+set number                          " enable line numbers
+set autoindent                          " set auto-indenting on for programming
+set showmatch                   " automatically show matching brackets. works like it does in bbedit.
+set visualbell                          " turn on the "visual bell" - which is much quieter than the "audio blink"
+set ruler                       " show the cursor position all the time
+set backspace=indent,eol,start  " make that backspace key work the way it should
+"set background=dark             " Use colours that work well on a dark background (Console is usually black)
+"set showmode                    " show the current mode
+"set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
+
+
+"" Leader
+let g:mapleader="\<Space>"
+
+""  leader shortcuts
+" :W saves the file with sudo.  must come before the <leader>w remap below
+command W w !sudo tee % > /dev/null
+
+" quickly save files
+nnoremap <Leader>w :w<CR>
+" write and quit
+noremap <leader>q :q<cr>
+
+" system clipboard
+set clipboard=unnamedplus
+map <leader>y "+y
+
+"" Colors
+colorscheme tender
+"hi Visual guibg=#5f5f5f ctermbg=59            " manual override.
+hi Visual term=reverse cterm=reverse guibg=#5f5f5f
+
+"" Whitespace
+set nowrap                      " don't wrap lines
+set tabstop=4 shiftwidth=4      " a tab is four spaces
+set expandtab                   " use spaces, not tabs
+set backspace=indent,eol,start  " backspace through everything in insert mode
+command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+
+"" indentation and tabbing rules
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype sh setlocal ts=4 sts=4 sw=4
+
+
+"" Splits
+set splitright
+set splitbelow
+
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
+""" faster loads for gitgutter
+set updatetime=250
+
+""" lightline settings """
+" enable tender theme
+let g:tender_lightline = 1
+" set lightline theme
+let g:lightline = {
+    \ 'colorscheme': 'tender',
+    \ 'component' : {
+    \   'readonly': '%{&filetype=="help"?"":&readonly?"-":""}',
+    \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+    \ },
+    \ 'component_visible_condition': {
+    \   'readonly': '(&filetype!="help"&& &readonly)',
+    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+    \ },
+    \ 'active' : {
+    \    'right' : [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ]
+    \ },
+  \ }
+if !has('gui_running')
+  set t_Co=256
+endif
+set laststatus=2
+set noshowmode
+
+" http://www.blaenkdenum.com/posts/a-simpler-vim-statusline/
+" mode aware cursors (NOTE: Gui Only)
+set guicursor=a:block
+set guicursor+=o:hor50-Cursor
+set guicursor+=n:Cursor
+set guicursor+=i-ci-sm:InsertCursor
+set guicursor+=r-cr:ReplaceCursor-hor20
+set guicursor+=c:CommandCursor
+set guicursor+=v-ve:VisualCursor
+set guicursor+=a:blinkon0
+
+hi InsertCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=37  guibg=#2aa198
+hi VisualCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=125 guibg=#d33682
+hi ReplaceCursor ctermfg=15 guifg=#fdf6e3 ctermbg=65  guibg=#dc322f
+hi CommandCursor ctermfg=15 guifg=#fdf6e3 ctermbg=166 guibg=#cb4b16
+
+" line number colors.
+"hi CursorLineNr   term=bold ctermfg=Yellow gui=bold guifg=Yellow
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" Quickly edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" golang
+let g:go_fmt_command = 'goimports'
+
+augroup myGo
+  autocmd FileType go nmap <leader>b <Plug>(go-build)
+augroup END
+
+" sane defaults for Make files
+autocmd FileType make setlocal noexpandtab "shiftwidth=4 softtabstop=0 tabstop=4
+autocmd FileType make nmap <leader>t :%s/^<Space>\{4}/\t/<CR>
+
+" expand regions (github.com/terryma/vim-expand-region)
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+    let @" = s:restore_reg
+    return ''
+endfunction
+
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
+" ansible config
+let g:ansible_unindent_after_newline = 1
+let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
+
+" Automatic paste detection.
+" Credit: https://szunyog.github.io/vim/vim-automatically-set-paste-mode
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()

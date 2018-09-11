@@ -1,0 +1,20 @@
+# Common Fluff
+*~
+
+# Compiled files
+*.o
+*.so
+*.pyc
+
+# OS Generated files
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+
+# Other things
+.bundle
+.vagrant
+.idea
+node_modules/
+bower_components/
