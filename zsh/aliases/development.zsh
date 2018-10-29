@@ -20,3 +20,6 @@ alias vup='vagrant up'
 ## docker
 alias dc='docker-compose'
 alias docker-clean='docker system prune --all --force --volumes'
+
+## convox
+alias cx='convox'

@@ -38,6 +38,7 @@
     reword = commit --amend
     fuck = reset --hard
     amend = commit --amend --no-edit
+    co = checkout
 
 [branch]
 	autosetupmerge = true

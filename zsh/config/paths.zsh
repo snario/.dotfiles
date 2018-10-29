@@ -10,6 +10,7 @@ if [[ $OSTYPE == 'linux-gnu' ]]; then
   TEX="/usr/texbin"
 elif [[ $OSTYPE == darwin* ]]; then
   TEX="/usr/local/texlive/2014/bin/universal-darwin"
+  VSCODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 fi
 
 # additional autocompletions
@@ -31,4 +32,4 @@ for elem in $USER_BIN/*; do
 done
 
 # export final result
-export PATH="$USER_BIN:$DOT_BIN:$TEX:$GOPATH/bin:$GOLANG_BIN:$FZF_PREFIX/fzf/bin:$SYSTEM"
+export PATH="$USER_BIN:$DOT_BIN:$TEX:$GOPATH/bin:$GOLANG_BIN:$FZF_PREFIX/fzf/bin:$SYSTEM:$VSCODE"
