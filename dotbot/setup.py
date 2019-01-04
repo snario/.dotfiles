@@ -73,7 +73,7 @@ setup(
     ],
 
     install_requires=[
-        'PyYAML>=3.12,<4',
+        'pyyaml>=4.2b1'
     ],
 
     # To provide executable scripts, use entry points in preference to the
