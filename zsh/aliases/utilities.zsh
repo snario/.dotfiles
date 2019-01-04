@@ -93,3 +93,9 @@ alias vimrc='vim ~/.vimrc'
 # Easily view config files. Removes all comments and displays actual live settings
 # Usage: "cat /file/with/hashtag/comments "
 alias -g prp='| grep -v "#" | sed "/^$/d"'
+
+# Print tree
+function tree+ () {
+  tree -I "$(grep -hvE '^$|^#' {~/,,$(git rev-parse --show-toplevel)/}.gitignore|sed 's:/$::'|tr \\n '\|')" --dirsfirst
+}
+
