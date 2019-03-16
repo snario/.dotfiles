@@ -100,7 +100,7 @@ shift + alt - f : chunkc tiling::window --toggle native-fullscreen
 alt - d : chunkc tiling::window --toggle parent
 
 # toggle window split type
-alt - e : chunkc tiling::window --toggle split
+# alt - e : chunkc tiling::window --toggle split
 
 # float / unfloat window
 alt - t : chunkc tiling::window --toggle float
@@ -120,7 +120,7 @@ ctrl + alt - d : chunkc tiling::desktop --layout float
 ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
 
 # create desktop, move window and follow focus
-shift + cmd - n : chunkc tiling::desktop --create;\
-    ids=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
-    chunkc tiling::window --send-to-desktop $(echo ${ids##* });\
-    chunkc tiling::desktop --focus $(echo ${ids##* })
+# shift + cmd - n : chunkc tiling::desktop --create;\
+#    ids=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
+#    chunkc tiling::window --send-to-desktop $(echo ${ids##* });\
+#    chunkc tiling::desktop --focus $(echo ${ids##* })
