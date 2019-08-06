@@ -17,7 +17,7 @@ fi
 fpath=($HOME/.dotfiles/zsh/config/fpath $fpath)
 
 # Brewfile path
-export HOMEBREW_BREWFILE="$HOME/.Brewfile"
+export HOMEBREW_BREWFILE="$HOME/.config/brewfile/Brewfile"
 
 # Go Definitions
 export GOPATH=$HOME/go

@@ -8,6 +8,7 @@ brew ccache
 brew cmake
 brew fzf
 brew gdbm
+brew hub
 brew icu4c
 brew mas
 brew nvm
@@ -18,6 +19,7 @@ brew python
 brew readline
 brew sqlite
 brew the_silver_searcher
+brew tree
 brew watchman
 brew xz
 brew yarn --without-node

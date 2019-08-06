@@ -12,3 +12,4 @@
     ~/bin/lock: bin/osx_lock
     ~/.skhdrc: skhd/skhdrc
     ~/.chunkwmrc: chunkwm/chunkwmrc
+    ~/.config/brewfile/Brewfile: brew/Brewfile
