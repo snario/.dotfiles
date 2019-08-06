@@ -1,0 +1,43 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew autojump
+brew boost
+brew ccache
+brew cmake
+brew fzf
+brew gdbm
+brew icu4c
+brew mas
+brew nvm
+brew openssl
+brew pcre
+brew postgresql
+brew python
+brew readline
+brew sqlite
+brew the_silver_searcher
+brew watchman
+brew xz
+brew yarn --without-node
+brew youtube-dl
+brew z3
+
+tap homebrew/services
+
+tap homebrew/cask
+
+tap ethereum/ethereum
+brew solidity
+
+tap koekeishiya/formulae
+brew chunkwm
+brew skhd
+
+tap rcmdnk/file
+brew brew-file
+
+# App Store applications
+appstore 1451544217 Lightroom (2.3.1)
+appstore 747648890 Telegram (5.5.1)
