@@ -30,8 +30,10 @@ tap homebrew/services
 
 tap homebrew/cask
 
-tap ethereum/ethereum
+## Direct install
 brew solidity
+
+tap ethereum/ethereum
 
 tap koekeishiya/formulae
 brew chunkwm
@@ -39,6 +41,9 @@ brew skhd
 
 tap rcmdnk/file
 brew brew-file
+
+# Other Homebrew packages
+brew python2
 
 # App Store applications
 appstore 1451544217 Lightroom (2.3.1)
