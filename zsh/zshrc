@@ -46,10 +46,31 @@ export TIME_STYLE=long-iso
 ## oh-my-zsh config ##
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 
-ZSH_THEME="ivan"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
-plugins=(git git-extras zsh-autosuggestions zsh-completions alias-tips history)
-plugins+=(fasd brew brew-cask common-aliases osx taskwarrior extract adb zsh-completions docker vscode)
+plugins=(
+  adb
+  alias-tips
+  brew
+  brew-cask
+  common-aliases
+  docker
+  extract
+  fasd
+  git
+  git-extras
+  history
+  osx
+  shrink-path
+  taskwarrior
+  vscode
+  zsh-autosuggestions
+  zsh-completions
+  zsh-completions
+)
+
+PS1='%n@%m $(shrink_path -f)>'
 
 DISABLE_AUTO_UPDATE=true
 
