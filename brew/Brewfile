@@ -63,7 +63,6 @@ brew nvm
 brew oniguruma
 brew opencore-amr
 brew openjpeg
-brew openssl
 brew openssl@1.1
 brew opus
 brew p11-kit
@@ -98,10 +97,14 @@ brew ykpers
 brew youtube-dl
 brew z3
 
+tap homebrew/cask-fonts
+cask font-fontawesome
+
 tap homebrew/services
 
 tap homebrew/cask
-cask gifcapture
+cask background-music
+cask vlc
 
 ## Direct install
 brew solidity
@@ -109,8 +112,10 @@ brew solidity
 tap ethereum/ethereum
 
 tap koekeishiya/formulae
-brew chunkwm
 brew skhd
+brew yabai
+
+tap koekeishiya/formulae
 
 tap rcmdnk/file
 brew brew-file
@@ -118,8 +123,13 @@ brew brew-file
 tap sambadevi/powerlevel9k
 
 # Other Homebrew packages
+brew openssl
 brew python2
+brew rustup
 brew yubikey-personalization
+
+# Other Cask applications
+cask gifcapture
 
 # App Store applications
 appstore 1451544217 Lightroom (2.3.1)

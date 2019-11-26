@@ -129,3 +129,5 @@ export NVM_DIR=/usr/local/Cellar/nvm/0.34.0 # $(brew --prefix nvm)
 
 # As per instructions, load this last so that it wraps ZLE widgets.
 source ~/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $HOME/.cargo/env
