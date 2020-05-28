@@ -23,3 +23,5 @@ alias docker-clean='docker system prune --all --force --volumes'
 
 ## convox
 alias cx='convox'
+
+alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin/code"

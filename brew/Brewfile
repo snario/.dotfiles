@@ -5,11 +5,14 @@ tap homebrew/core
 brew adns
 brew aom
 brew autojump
+brew awscli
 brew boost
 brew cairo
 brew ccache
+brew circleci
 brew cmake
 brew ffmpeg
+brew firebase-cli
 brew flac
 brew fontconfig
 brew freetype
@@ -18,6 +21,7 @@ brew fribidi
 brew fzf
 brew gdbm
 brew gettext
+brew gh
 brew giflib
 brew glib
 brew gmp
@@ -53,11 +57,15 @@ brew libunistring
 brew libusb
 brew libvorbis
 brew libvpx
+brew libyaml
 brew libyubikey
 brew little-cms2
 brew lzo
 brew mas
+brew mysql
+brew ncurses
 brew nettle
+brew node
 brew npth
 brew nvm
 brew oniguruma
@@ -71,19 +79,26 @@ brew pinentry
 brew pinentry-mac
 brew pixman
 brew postgresql
+brew protobuf
 brew python
 brew readline
 brew rtmpdump
 brew rubberband
+brew ruby
 brew sdl2
 brew snappy
 brew speex
 brew sqlite
+brew terraform
 brew tesseract
 brew the_silver_searcher
 brew theora
+brew tmux
+brew tmuxinator
+brew trash
 brew tree
 brew unbound
+brew utf8proc
 brew watchman
 brew webp
 brew wget
@@ -104,12 +119,19 @@ tap homebrew/services
 
 tap homebrew/cask
 cask background-music
+cask gifcapture
 cask vlc
 
 ## Direct install
 brew solidity
 
 tap ethereum/ethereum
+
+tap github/gh
+
+tap heroku/brew
+brew heroku
+brew heroku/brew/heroku-node
 
 tap koekeishiya/formulae
 brew skhd
@@ -122,14 +144,14 @@ brew brew-file
 
 tap sambadevi/powerlevel9k
 
+tap somdoron/formulae
+brew spacebar
+
 # Other Homebrew packages
 brew openssl
 brew python2
 brew rustup
 brew yubikey-personalization
-
-# Other Cask applications
-cask gifcapture
 
 # App Store applications
 appstore 1451544217 Lightroom (2.3.1)

@@ -47,5 +47,21 @@ yabai -m rule --add app="App Store" manage=off
 yabai -m rule --add app="Tandem" manage=off
 yabai -m rule --add app="GifCapture" manage=off
 yabai -m rule --add app="System Preferences" manage=off
+yabai -m rule --add app="Command E" manage=off
+
+# https://github.com/koekeishiya/yabai/issues/366
+# yabai -m signal --add \
+#   label=keep-metamask-small \
+#   event=window_created \
+#   app='^Google Chrome$' \
+#   title='^MetaMask Notification$' \
+#   action='
+#     yabai -m query --windows --window $YABAI_WINDOW_ID \
+#     | jq -re ".floating == 0" \
+#     && yabai -m window $YABAI_WINDOW_ID --toggle float
+#   '
+
+yabai -m signal --add app='Google Chrome' event='window_title_changed' \
+  action="yabai -m rule --add label=$(uuidgen) app='Google Chrome' title='MetaMask Notification' manage=off"
 
 echo "yabai configuration loaded.."

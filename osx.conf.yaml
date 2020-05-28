@@ -11,5 +11,6 @@
     ~/Library/Fonts/Hack-Regular.ttf: fonts/Hack-Regular.ttf
     ~/bin/lock: bin/osx_lock
     ~/.skhdrc: skhd/skhdrc
-    ~/.chunkwmrc: chunkwm/chunkwmrc
+    ~/.yabai: yabai/yabairc
+    ~/.spacebarrc: spacebar/spacebarrc
     ~/.config/brewfile/Brewfile: brew/Brewfile

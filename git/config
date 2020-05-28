@@ -39,6 +39,7 @@
     fuck = reset --hard
     amend = commit --amend --no-edit
     co = checkout
+	set-upstream = !git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)
 
 [branch]
 	autosetupmerge = true

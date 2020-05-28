@@ -16,7 +16,7 @@
     ~/.nanorc: nano/nanorc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.grc: grc
-    ~/.toprc : top/toprc
+    ~/.toprc: top/toprc
     ~/.vimrc: vim/vimrc
     ~/.vim/autoload: vim/autoload
     ~/.zshrc: zsh/zshrc
