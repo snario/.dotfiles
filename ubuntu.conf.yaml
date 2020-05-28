@@ -8,7 +8,6 @@
 - shell:
 
 - link:
-    ~/bin/hop: i3/scripts/hop
     ~/.fonts/Inconsolata-Regular.ttf: fonts/Inconsolata-Regular.ttf
     ~/.fonts/Hack-Regular.ttf: fonts/Hack-Regular.ttf
     ~/.fonts/SourceCodePro-Regular.ttf: fonts/SourceCodePro-Regular.ttf
