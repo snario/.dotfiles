@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sandbox_init_nvm(){
+  source $(brew --prefix nvm)/nvm.sh
+}
+
+sandbox_init_rvm(){
+  if test -f ~/.rvm/scripts/rvm; then
+     [ "$(type rvm | grep -o function)" = "function" ] || source ~/.rvm/scripts/rvm
+  fi
+}
+
+sandbox_init_python(){
+  source /usr/local/bin/virtualenvwrapper.sh
+}
