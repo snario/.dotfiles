@@ -19,6 +19,7 @@
     ~/.toprc: top/toprc
     ~/.vimrc: vim/vimrc
     ~/.vim/autoload: vim/autoload
+    ~/.p10k.zsh: p10k/p10k.zsh
     ~/.zshrc: zsh/zshrc
     ~/.dotfiles/.git/hooks/post-checkout: git/hooks/post-checkout
     ~/.dotfiles/.git/hooks/post-merge: git/hooks/post-merge

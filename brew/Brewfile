@@ -123,6 +123,7 @@ tap homebrew/cask
 cask background-music
 cask gifcapture
 cask kitty
+cask monitorcontrol
 cask vlc
 
 ## Direct install
