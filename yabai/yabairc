@@ -1,34 +1,15 @@
 #!/usr/bin/env sh
 
-# bar settings
-yabai -m config status_bar                   on
-yabai -m config status_bar_text_font         "Helvetica Neue:Bold:12.0"
-yabai -m config status_bar_icon_font         "Font Awesome 5 Free:Regular:12.0"
-yabai -m config status_bar_background_color  0xff000000
-yabai -m config status_bar_foreground_color  0xffa8a8a8
-yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
-yabai -m config status_bar_power_icon_strip  
-yabai -m config status_bar_space_icon        
-yabai -m config status_bar_clock_icon        
-
 # global settings
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          autofocus
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
+yabai -m config window_topmost               on
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
-yabai -m config window_shadow                off
-yabai -m config window_border                on
-yabai -m config window_border_placement      inset
-yabai -m config window_border_width          4
-yabai -m config window_border_radius         0
-yabai -m config active_window_border_topmost off
-yabai -m config active_window_border_color   0xffa8a8a8
-yabai -m config normal_window_border_color   0xff505050
-yabai -m config insert_window_border_color   0xffd75f5f
+yabai -m config window_shadow                float
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.90
+yabai -m config normal_window_opacity        1.0
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
 yabai -m config mouse_modifier               fn
@@ -37,17 +18,25 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  0
+yabai -m config top_padding                  26
 yabai -m config bottom_padding               0
 yabai -m config left_padding                 0
 yabai -m config right_padding                0
 yabai -m config window_gap                   0
 
+# keep these ones on top of all other windows
+# yabai -m rule --add app="^zoom.*$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Stickies$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Command E$" sticky=on layer=above manage=off
+
+# default float
+yabai -m rule --add app="^kitty$" manage=off
 yabai -m rule --add app="App Store" manage=off
+yabai -m rule --add app="System Preferences" manage=off
 yabai -m rule --add app="Tandem" manage=off
 yabai -m rule --add app="GifCapture" manage=off
-yabai -m rule --add app="System Preferences" manage=off
-yabai -m rule --add app="Command E" manage=off
+
 
 # https://github.com/koekeishiya/yabai/issues/366
 # yabai -m signal --add \
@@ -61,7 +50,7 @@ yabai -m rule --add app="Command E" manage=off
 #     && yabai -m window $YABAI_WINDOW_ID --toggle float
 #   '
 
-yabai -m signal --add app='Google Chrome' event='window_title_changed' \
-  action="yabai -m rule --add label=$(uuidgen) app='Google Chrome' title='MetaMask Notification' manage=off"
+yabai -m signal --add app='^Google Chrome$' event='window_title_changed' \
+  action="yabai -m rule --add label=$(uuidgen) app='^Google Chrome$' title='MetaMask Notification' manage=off"
 
 echo "yabai configuration loaded.."

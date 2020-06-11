@@ -10,6 +10,6 @@
     ~/Library/Fonts/SourceCodePro-Regular.ttf: fonts/SourceCodePro-Regular.ttf
     ~/Library/Fonts/Hack-Regular.ttf: fonts/Hack-Regular.ttf
     ~/.skhdrc: skhd/skhdrc
-    ~/.yabai: yabai/yabairc
+    ~/.yabairc: yabai/yabairc
     ~/.spacebarrc: spacebar/spacebarrc
     ~/.config/brewfile/Brewfile: brew/Brewfile
