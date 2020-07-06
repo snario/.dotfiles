@@ -86,14 +86,14 @@
 [diff]
 	renames = copies
 	mnemonicprefix = true # [i]ndex, [w]ork tree, [c]ommit, [o]bject
-	tool = vimdiff
+	tool = vscode
 
 [grep]
 	lineNumber = true
 	
 [merge]
     stat = true
-    tool = vimdiff
+	tool = vscode
     conflictstyle = diff3
 
 [mergetool]
@@ -125,3 +125,7 @@
 # Allow local customizations in the .gitconfig_local file
 [include]
 	path = ~/.gitconfig_local
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE

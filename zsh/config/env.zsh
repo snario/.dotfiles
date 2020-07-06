@@ -18,3 +18,7 @@ fi
 # Customize github.com/djui/alias-tips
 export ZSH_PLUGINS_ALIAS_TIPS_REVEAL=1
 export ZSH_PLUGINS_ALIAS_TIPS_REVEAL_EXCLUDES="(_ ll vi)"
+
+# Customize macprefs
+export MACPREFS_BACKUP_DIR="$HOME/SomeOtherDir"
+

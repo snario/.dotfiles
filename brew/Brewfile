@@ -1,162 +1,63 @@
+tap "clintmod/formulas"
+tap "ethereum/ethereum"
+tap "github/gh"
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "koekeishiya/formulae"
+tap "rcmdnk/file"
+tap "sambadevi/powerlevel9k"
+tap "somdoron/formulae"
 
-# tap repositories and their packages
+brew "autojump"
+brew "sqlite"
+brew "awscli"
+brew "bazaar"
+brew "cheat"
+brew "circleci"
+brew "ffmpeg"
+brew "firebase-cli"
+brew "fzf"
+brew "gnupg"
+brew "go"
+brew "hopenpgp-tools"
+brew "htop"
+brew "jq"
+brew "mas"
+brew "nvm"
+brew "pinentry-mac"
+brew "pipenv"
+brew "pkg-config"
+brew "postgresql"
+brew "terraform"
+brew "the_silver_searcher"
+brew "trash"
+brew "tree"
+brew "watchman"
+brew "wget"
+brew "yarn"
+brew "ykpers"
+brew "ykman"
+brew "youtube-dl"
+brew "clintmod/formulas/macprefs"
+brew "ethereum/ethereum/solidity"
+brew "github/gh/gh"
+brew "heroku/brew/heroku"
+brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/yabai"
+brew "rcmdnk/file/brew-file"
+brew "somdoron/formulae/spacebar"
 
-tap homebrew/core
-brew adns
-brew aom
-brew autojump
-brew awscli
-brew boost
-brew cairo
-brew ccache
-brew cheat
-brew circleci
-brew cmake
-brew ffmpeg
-brew firebase-cli
-brew flac
-brew fontconfig
-brew freetype
-brew frei0r
-brew fribidi
-brew fzf
-brew gdbm
-brew gettext
-brew gh
-brew giflib
-brew glib
-brew gmp
-brew gnupg
-brew gnutls
-brew graphite2
-brew harfbuzz
-brew hopenpgp-tools
-brew htop
-brew hub
-brew icu4c
-brew jpeg
-brew jq
-brew json-c
-brew lame
-brew leptonica
-brew libass
-brew libassuan
-brew libbluray
-brew libevent
-brew libffi
-brew libgcrypt
-brew libgpg-error
-brew libidn2
-brew libksba
-brew libogg
-brew libpng
-brew libsamplerate
-brew libsndfile
-brew libsoxr
-brew libtasn1
-brew libtiff
-brew libunistring
-brew libusb
-brew libvorbis
-brew libvpx
-brew libyaml
-brew libyubikey
-brew little-cms2
-brew lzo
-brew mas
-brew mysql
-brew ncurses
-brew nettle
-brew node
-brew npth
-brew nvm
-brew oniguruma
-brew opencore-amr
-brew openjpeg
-brew openssl@1.1
-brew opus
-brew p11-kit
-brew pcre
-brew pinentry
-brew pinentry-mac
-brew pixman
-brew postgresql
-brew protobuf
-brew python
-brew readline
-brew rtmpdump
-brew rubberband
-brew ruby
-brew sdl2
-brew snappy
-brew speex
-brew sqlite
-brew terraform
-brew tesseract
-brew the_silver_searcher
-brew theora
-brew tmux
-brew tmuxinator
-brew trash
-brew tree
-brew unbound
-brew utf8proc
-brew watchman
-brew webp
-brew wget
-brew x264
-brew x265
-brew xvid
-brew xz
-brew yarn --without-node
-brew ykman
-brew ykpers
-brew youtube-dl
-brew z3
+cask "ipfs"
+cask "kitty"
+cask "vlc"
 
-tap homebrew/cask-fonts
-cask font-fontawesome
-
-tap homebrew/services
-
-tap homebrew/cask
-cask background-music
-cask gifcapture
-cask kitty
-cask monitorcontrol
-cask vlc
-
-## Direct install
-brew solidity
-
-tap ethereum/ethereum
-
-tap github/gh
-
-tap heroku/brew
-brew heroku
-brew heroku/brew/heroku-node
-
-tap koekeishiya/formulae
-brew skhd
-brew yabai
-
-tap koekeishiya/formulae
-
-tap rcmdnk/file
-brew brew-file
-
-tap sambadevi/powerlevel9k
-
-tap somdoron/formulae
-brew spacebar
-
-# Other Homebrew packages
-brew openssl
-brew python2
-brew rustup
-brew yubikey-personalization
-
-# App Store applications
-appstore 1451544217 Lightroom (2.3.1)
-appstore 747648890 Telegram (5.5.1)
+mas "Adobe Lightroom", id: 1451544217
+mas "Fantastical", id: 975937182
+mas "Keynote", id: 409183694
+mas "Skitch", id: 425955336
+mas "Telegram", id: 747648890
+mas "Xcode", id: 497799835
