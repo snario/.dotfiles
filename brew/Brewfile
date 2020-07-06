@@ -1,63 +1,93 @@
-tap "clintmod/formulas"
-tap "ethereum/ethereum"
-tap "github/gh"
-tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "koekeishiya/formulae"
-tap "rcmdnk/file"
-tap "sambadevi/powerlevel9k"
-tap "somdoron/formulae"
 
-brew "autojump"
-brew "sqlite"
-brew "awscli"
-brew "bazaar"
-brew "cheat"
-brew "circleci"
-brew "ffmpeg"
-brew "firebase-cli"
-brew "fzf"
-brew "gnupg"
-brew "go"
-brew "hopenpgp-tools"
-brew "htop"
-brew "jq"
-brew "mas"
-brew "nvm"
-brew "pinentry-mac"
-brew "pipenv"
-brew "pkg-config"
-brew "postgresql"
-brew "terraform"
-brew "the_silver_searcher"
-brew "trash"
-brew "tree"
-brew "watchman"
-brew "wget"
-brew "yarn"
-brew "ykpers"
-brew "ykman"
-brew "youtube-dl"
-brew "clintmod/formulas/macprefs"
-brew "ethereum/ethereum/solidity"
-brew "github/gh/gh"
-brew "heroku/brew/heroku"
-brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai"
-brew "rcmdnk/file/brew-file"
-brew "somdoron/formulae/spacebar"
+# tap repositories and their packages
 
-cask "ipfs"
-cask "kitty"
-cask "vlc"
+tap 'homebrew/core'
+brew 'autoconf'
+brew 'autojump'
+brew 'awscli'
+brew 'bazaar'
+brew 'cheat'
+brew 'circleci'
+brew 'ffmpeg'
+brew 'firebase-cli'
+brew 'fzf'
+brew 'github/gh/gh'
+brew 'gnupg'
+brew 'go'
+brew 'hopenpgp-tools'
+brew 'htop'
+brew 'jq'
+brew 'mas'
+brew 'nvm'
+brew 'openssl@1.1'
+brew 'pinentry-mac'
+brew 'pipenv'
+brew 'pkg-config'
+brew 'postgresql'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
+brew 'readline'
+brew 'sqlite'
+brew 'terraform'
+brew 'the_silver_searcher'
+brew 'trash'
+brew 'tree'
+brew 'watchman'
+brew 'wget'
+brew 'xz'
+brew 'yarn'
+brew 'ykman'
+brew 'ykpers'
+brew 'youtube-dl'
+brew 'zlib'
 
-mas "Adobe Lightroom", id: 1451544217
-mas "Fantastical", id: 975937182
-mas "Keynote", id: 409183694
-mas "Skitch", id: 425955336
-mas "Telegram", id: 747648890
-mas "Xcode", id: 497799835
+tap 'homebrew/bundle'
+
+tap 'homebrew/cask-fonts'
+
+tap 'homebrew/services'
+
+tap 'homebrew/cask'
+cask 'google-chrome'
+cask 'ipfs'
+cask 'kitty'
+cask 'visual-studio-code'
+cask 'vlc'
+
+tap 'clintmod/formulas'
+brew 'clintmod/formulas/macprefs'
+
+## Direct install
+brew 'ethereum/ethereum/solidity'
+
+tap 'ethereum/ethereum'
+
+tap 'github/gh'
+
+tap 'heroku/brew'
+brew 'heroku/brew/heroku'
+
+tap 'koekeishiya/formulae'
+brew 'koekeishiya/formulae/skhd'
+brew 'koekeishiya/formulae/yabai'
+
+tap 'rcmdnk/file'
+brew 'rcmdnk/file/brew-file'
+
+tap 'sambadevi/powerlevel9k'
+
+tap 'somdoron/formulae'
+brew 'somdoron/formulae/spacebar'
+
+# Other Homebrew packages
+brew 'openssl'
+brew 'sqlite3'
+
+# App Store applications
+mas 'Adobe', id: id:
+mas 'Fantastical', id: 975937182
+mas 'Keynote', id: 409183694
+mas 'Skitch', id: 425955336
+mas 'Slack', id: 803453959
+mas 'Telegram', id: 747648890
+mas 'Xcode', id: 497799835
