@@ -13,6 +13,7 @@
 - link:
     ~/.gitconfig: git/config
     ~/.config/htop/htoprc: htop/htoprc
+    ~/.config/kitty/kitty.conf: kitty/kitty.conf
     ~/.nanorc: nano/nanorc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.grc: grc
