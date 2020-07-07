@@ -20,5 +20,5 @@ export ZSH_PLUGINS_ALIAS_TIPS_REVEAL=1
 export ZSH_PLUGINS_ALIAS_TIPS_REVEAL_EXCLUDES="(_ ll vi)"
 
 # Customize macprefs
-export MACPREFS_BACKUP_DIR="$HOME/SomeOtherDir"
+export MACPREFS_BACKUP_DIR="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
