@@ -10,7 +10,7 @@ if [[ $OSTYPE == 'linux-gnu' ]]; then
   TEX="/usr/texbin"
 elif [[ $OSTYPE == darwin* ]]; then
   TEX="/usr/local/texlive/2014/bin/universal-darwin"
-  VSCODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  VSCODE="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
 fi
 
 # additional autocompletions
@@ -33,5 +33,8 @@ for elem in $USER_BIN/*; do
     fi
 done
 
+RUBY="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin"
+NPM="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+
 # export final result
-export PATH="$USER_BIN:$DOT_BIN:$TEX:$GOPATH/bin:$GOLANG_BIN:$FZF_PREFIX/fzf/bin:$SYSTEM:$VSCODE"
+export PATH="$USER_BIN:$DOT_BIN:$TEX:$GOPATH/bin:$GOLANG_BIN:$FZF_PREFIX/fzf/bin:$SYSTEM:$VSCODE:$RUBY:$NPM"

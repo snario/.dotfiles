@@ -4,6 +4,7 @@
 tap 'homebrew/core'
 brew 'adns'
 brew 'aom'
+brew 'autoconf'
 brew 'autojump'
 brew 'awscli'
 brew 'bazaar'
@@ -35,10 +36,12 @@ brew 'graphite2'
 brew 'harfbuzz'
 brew 'hopenpgp-tools'
 brew 'htop'
+brew 'httpie'
 brew 'icu4c'
 brew 'jpeg'
 brew 'jq'
 brew 'json-c'
+brew 'k9s'
 brew 'krb5'
 brew 'lame'
 brew 'leptonica'
@@ -89,7 +92,8 @@ brew 'pipenv'
 brew 'pixman'
 brew 'pkg-config'
 brew 'postgresql'
-brew 'python'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
 brew 'python@3.8'
 brew 'rav1e'
 brew 'readline'
@@ -98,6 +102,7 @@ brew 'rubberband'
 brew 'ruby'
 brew 'sdl2'
 brew 'snappy'
+brew 'solidity'
 brew 'speex'
 brew 'sqlite'
 brew 'srt'
@@ -112,6 +117,7 @@ brew 'vim'
 brew 'watchman'
 brew 'webp'
 brew 'wget'
+brew 'wrk'
 brew 'x264'
 brew 'x265'
 brew 'xvid'
@@ -128,7 +134,6 @@ tap 'homebrew/cask-fonts'
 cask 'font-hack-nerd-font'
 
 tap 'homebrew/cask-versions'
-cask 'visual-studio-code-insiders'
 
 tap 'homebrew/services'
 
@@ -145,7 +150,6 @@ tap 'clintmod/formulas'
 brew 'macprefs'
 
 tap 'ethereum/ethereum'
-brew 'solidity'
 
 tap 'github/gh'
 
@@ -162,6 +166,12 @@ brew 'brew-file'
 
 tap 'somdoron/formulae'
 brew 'spacebar'
+
+# Other Homebrew packages
+brew 'python'
+
+# Other Cask applications
+cask 'visual-studio-code-insiders'
 
 # App Store applications
 mas '1Password', id: (7.5)',

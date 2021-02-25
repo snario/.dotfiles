@@ -8,5 +8,6 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 # add rules for highlights
 typeset -gA ZSH_HIGHLIGHT_PATTERNS
 export ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+
 # To add more patterns:
 #ZSH_HIGHLIGHT_PATTERNS+=('other pattern' 'fg=green,bold,bg=white')
