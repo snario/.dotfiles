@@ -99,3 +99,9 @@ function tree+ () {
   tree -I "$(grep -hvE '^$|^#' {~/,,$(git rev-parse --show-toplevel)/}.gitignore|sed 's:/$::'|tr \\n '\|')" --dirsfirst
 }
 
+function skhd_help () {
+    ioreg -l -w 0 \
+    | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=(\d+)/' \
+    | uniq \
+    | xargs -I{} ps -p {} -o comm=
+}

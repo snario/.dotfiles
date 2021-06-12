@@ -9,7 +9,11 @@ brew 'autoconf'
 brew 'autojump'
 brew 'awscli'
 brew 'bazaar'
+brew 'bdw-gc'
+brew 'berkeley-db'
 brew 'boost'
+brew 'brotli'
+brew 'c-ares'
 brew 'cairo'
 brew 'ccache'
 brew 'cheat'
@@ -33,23 +37,29 @@ brew 'gmp'
 brew 'gnupg'
 brew 'gnutls'
 brew 'go'
+brew 'gobject-introspection'
 brew 'graphite2'
+brew 'guile'
 brew 'harfbuzz'
 brew 'helm'
 brew 'hopenpgp-tools'
 brew 'htop'
 brew 'httpie'
 brew 'icu4c'
+brew 'jemalloc'
 brew 'jpeg'
 brew 'jq'
 brew 'json-c'
 brew 'k9s'
 brew 'krb5'
+brew 'kubectx'
+brew 'kubernetes-cli'
 brew 'lame'
 brew 'leptonica'
 brew 'libass'
 brew 'libassuan'
 brew 'libbluray'
+brew 'libev'
 brew 'libevent'
 brew 'libffi'
 brew 'libgcrypt'
@@ -58,30 +68,44 @@ brew 'libidn2'
 brew 'libksba'
 brew 'libogg'
 brew 'libpng'
+brew 'libpthread-stubs'
 brew 'libsamplerate'
 brew 'libsndfile'
+brew 'libsodium'
 brew 'libsoxr'
 brew 'libtasn1'
 brew 'libtiff'
+brew 'libtool'
 brew 'libunistring'
 brew 'libusb'
+brew 'libuv'
 brew 'libvidstab'
 brew 'libvorbis'
 brew 'libvpx'
+brew 'libx11'
+brew 'libxau'
+brew 'libxcb'
+brew 'libxdmcp'
+brew 'libxext'
+brew 'libxrender'
 brew 'libyaml'
 brew 'libyubikey'
 brew 'little-cms2'
 brew 'lua'
 brew 'lzo'
+brew 'm4'
 brew 'mackup'
 brew 'mas'
+brew 'mpdecimal'
 brew 'ncurses'
 brew 'nettle'
+brew 'nghttp2'
 brew 'node'
 brew 'npth'
 brew 'nvm'
 brew 'oniguruma'
 brew 'opencore-amr'
+brew 'openjdk'
 brew 'openjpeg'
 brew 'openssl@1.1'
 brew 'opus'
@@ -97,6 +121,7 @@ brew 'postgresql'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'python@3.8'
+brew 'python@3.9'
 brew 'rav1e'
 brew 'readline'
 brew 'rtmpdump'
@@ -108,6 +133,7 @@ brew 'solidity'
 brew 'speex'
 brew 'sqlite'
 brew 'srt'
+brew 'tcl-tk'
 brew 'terraform'
 brew 'tesseract'
 brew 'the_silver_searcher'
@@ -119,9 +145,9 @@ brew 'vim'
 brew 'watchman'
 brew 'webp'
 brew 'wget'
-brew 'wrk'
 brew 'x264'
 brew 'x265'
+brew 'xorgproto'
 brew 'xvid'
 brew 'xz'
 brew 'yarn'
@@ -129,6 +155,9 @@ brew 'ykman'
 brew 'ykpers'
 brew 'youtube-dl'
 brew 'z3'
+brew 'zeromq'
+brew 'zimg'
+brew 'zstd'
 
 tap 'homebrew/bundle'
 
@@ -141,11 +170,18 @@ cask 'visual-studio-code-insiders'
 tap 'homebrew/services'
 
 tap 'homebrew/cask'
+cask 'brave-browser'
+cask 'calibre'
+cask 'discord'
 cask 'google-chrome'
+cask 'google-cloud-sdk'
 cask 'ipfs'
 cask 'kitty'
-cask 'metabase'
+cask 'ngrok'
+cask 'protonvpn'
+cask 'signal'
 cask 'spotify'
+cask 'transmission'
 cask 'vlc'
 cask 'zoom'
 
@@ -167,23 +203,23 @@ brew 'yabai'
 tap 'rcmdnk/file'
 brew 'brew-file'
 
+tap 'sambadevi/powerlevel9k'
+
 tap 'somdoron/formulae'
 brew 'spacebar'
 
-# Other Homebrew packages
-brew 'ngrok'
-brew 'python'
-
 # App Store applications
-mas "1Password 7", id: 1333542190
-mas "Adobe Lightroom", id: 1451544217
-mas "Fantastical", id: 975937182
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Skitch", id: 425955336
-mas "Slack", id: 803453959
-mas "Telegram", id: 747648890
-mas "Xcode", id: 497799835
+mas '1Password 7 (7.5)', id: 1333542190
+mas 'Adobe Lightroom (4.0)', id: 1451544217
+mas 'everyday (1.1.1)', id: 1394150432
+mas 'Fantastical (3.3)', id: 975937182
+mas 'GarageBand (10.4.1)', id: 682658836
+mas 'iMovie (10.2.1)', id: 408981434
+mas 'Keynote (10.3.5)', id: 409183694
+mas 'Notability (4.4.1)', id: 736189492
+mas 'Numbers (10.3.5)', id: 409203825
+mas 'Pages (10.3.5)', id: 409201541
+mas 'Skitch (2.9)', id: 425955336
+mas 'Slack (4.10.3)', id: 803453959
+mas 'Telegram (7.2)', id: 747648890
+mas 'Xcode (12.2)', id: 497799835
