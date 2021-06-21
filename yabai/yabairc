@@ -30,11 +30,13 @@ yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Stickies$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Command E$" sticky=on layer=above manage=off
 
+# sticky but not above all
+yabai -m rule --add app="^Tandem$" sticky=on layer=below manage=off
+
 # default float
 yabai -m rule --add app="^kitty$" manage=off
 yabai -m rule --add app="App Store" manage=off
 yabai -m rule --add app="System Preferences" manage=off
-yabai -m rule --add app="Tandem" manage=off
 yabai -m rule --add app="GifCapture" manage=off
 
 

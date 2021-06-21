@@ -35,7 +35,6 @@ brew 'giflib'
 brew 'glib'
 brew 'gmp'
 brew 'gnupg'
-brew 'gnutls'
 brew 'go'
 brew 'gobject-introspection'
 brew 'graphite2'
@@ -207,6 +206,10 @@ tap 'sambadevi/powerlevel9k'
 
 tap 'somdoron/formulae'
 brew 'spacebar'
+
+# Other Homebrew packages
+cask 'ngrok'
+brew 'python'
 
 # App Store applications
 mas '1Password 7 (7.5)', id: 1333542190
