@@ -20,9 +20,12 @@ brew 'cheat'
 brew 'circleci'
 brew 'cmake'
 brew 'dav1d'
+brew 'double-conversion'
 brew 'ffmpeg'
 brew 'firebase-cli'
 brew 'flac'
+brew 'fmt'
+brew 'folly'
 brew 'fontconfig'
 brew 'freetype'
 brew 'frei0r'
@@ -30,9 +33,11 @@ brew 'fribidi'
 brew 'fzf'
 brew 'gdbm'
 brew 'gettext'
+brew 'gflags'
 brew 'gh'
 brew 'giflib'
 brew 'glib'
+brew 'glog'
 brew 'gmp'
 brew 'gnupg'
 brew 'go'
@@ -91,6 +96,7 @@ brew 'libyaml'
 brew 'libyubikey'
 brew 'little-cms2'
 brew 'lua'
+brew 'lz4'
 brew 'lzo'
 brew 'm4'
 brew 'mackup'
@@ -137,9 +143,12 @@ brew 'terraform'
 brew 'tesseract'
 brew 'the_silver_searcher'
 brew 'theora'
+brew 'tmux'
+brew 'tmuxinator'
 brew 'trash'
 brew 'tree'
 brew 'unbound'
+brew 'utf8proc'
 brew 'vim'
 brew 'watchman'
 brew 'webp'
@@ -153,6 +162,7 @@ brew 'yarn'
 brew 'ykman'
 brew 'ykpers'
 brew 'youtube-dl'
+brew 'yq'
 brew 'z3'
 brew 'zeromq'
 brew 'zimg'
@@ -197,7 +207,7 @@ brew 'heroku-node'
 
 tap 'koekeishiya/formulae'
 brew 'skhd'
-brew 'yabai'
+brew 'yabai', args: ['HEAD']
 
 tap 'rcmdnk/file'
 brew 'brew-file'
@@ -205,24 +215,23 @@ brew 'brew-file'
 tap 'sambadevi/powerlevel9k'
 
 tap 'somdoron/formulae'
-brew 'spacebar'
 
 # Other Homebrew packages
 cask 'ngrok'
 brew 'python'
 
 # App Store applications
-mas '1Password 7 (7.5)', id: 1333542190
-mas 'Adobe Lightroom (4.0)', id: 1451544217
-mas 'everyday (1.1.1)', id: 1394150432
-mas 'Fantastical (3.3)', id: 975937182
-mas 'GarageBand (10.4.1)', id: 682658836
-mas 'iMovie (10.2.1)', id: 408981434
-mas 'Keynote (10.3.5)', id: 409183694
-mas 'Notability (4.4.1)', id: 736189492
-mas 'Numbers (10.3.5)', id: 409203825
-mas 'Pages (10.3.5)', id: 409201541
+mas '1Password 7 (7.9.2)', id: 1333542190
+mas 'Adobe Lightroom (5.0)', id: 1451544217
+mas 'everyday (1.2.4)', id: 1394150432
+mas 'Fantastical (3.5.1)', id: 975937182
+mas 'GarageBand (10.4.4)', id: 682658836
+mas 'iMovie (10.3.1)', id: 408981434
+mas 'Keynote (11.2)', id: 409183694
+mas 'Notability (4.4.4)', id: 736189492
+mas 'Numbers (11.2)', id: 409203825
+mas 'Pages (11.2)', id: 409201541
 mas 'Skitch (2.9)', id: 425955336
-mas 'Slack (4.10.3)', id: 803453959
-mas 'Telegram (7.2)', id: 747648890
-mas 'Xcode (12.2)', id: 497799835
+mas 'Slack (4.22.1)', id: 803453959
+mas 'Telegram (8.2)', id: 747648890
+mas 'Xcode (13.1)', id: 497799835
