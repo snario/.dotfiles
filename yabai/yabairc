@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#layer=above !/usr/bin/env sh
 
 # load scripting additions
 sudo yabai --load-sa
@@ -15,10 +15,15 @@ yabai -m config window_shadow                float
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        1.0
 yabai -m config split_ratio                  0.50
-yabai -m config auto_balance                 off
+yabai -m config auto_balance                 on
 yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
+yabai -m config window_border on
+yabai -m config window_border_width 6
+yabai -m config active_window_border_color   0xff3d464d     
+yabai -m config normal_window_border_color   0xff000000     
+
 
 # general space settings
 yabai -m config layout                       bsp
@@ -30,28 +35,14 @@ yabai -m config window_gap                   0
 
 # keep these ones on top of all other windows
 # yabai -m rule --add app="^zoom.*$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Stickies$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Command E$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Raycast$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Telegram$" sticky=on layer=above manage=off
-
-# sticky but not above all
-yabai -m rule --add app="^Tandem$" sticky=on layer=below manage=off
-
-# default float
-# yabai -m rule --add app="^kitty$" manage=off
-yabai -m rule --add app="App Store" manage=off
-yabai -m rule --add app="System Preferences" manage=off
-yabai -m rule --add app="GifCapture" manage=off
-yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
-yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add label="Software Update" title="Software Update" manage=off
-
+yabai -m rule --add app="^Finder$" sticky=on layer=above
+yabai -m rule --add app="^Stickies$" sticky=on layer=above 
+yabai -m rule --add app="^Command E$" sticky=on layer=above
+yabai -m rule --add app="^Raycast$" sticky=on layer=above
 
 # applications with custom rules (main, day-to-day applications/fullscreen
 # applications that i want to stay behind floating windows)
-applications="(kitty|Figma|Google Chrome|Mighty|Cron|Linear|Obsidian|Beeper|Messages|Signal|Telegram|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
+applications="(Books|kitty|Figma|Google Chrome|Mighty|Cron|Linear|Obsidian|Beeper|Messages|Signal|Telegram|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
 
 # NOTE: you need to set the settings for the applications in the 
 #       list first, or else they don't apply properly and you
@@ -59,12 +50,11 @@ applications="(kitty|Figma|Google Chrome|Mighty|Cron|Linear|Obsidian|Beeper|Mess
 
 # main applications get set to bottom layer to prevent them from
 # covering floating applications/popup windows
-yabai -m rule --add app="^${applications}$"     manage=on layer=below
+# yabai -m rule --add app="^${applications}$" manage=on layer=below
 
 # any apps that aren't main applications get set to float
 # e.g. system preferences, colour meter
-yabai -m rule --add app!="^${applications}$"    manage=off border=off
-
+yabai -m rule --add app!="^${applications}$" manage=off border=off
 
 # https://github.com/koekeishiya/yabai/issues/366
 # yabai -m signal --add \
@@ -110,13 +100,15 @@ setup_space 5 optimism
 setup_space 6 other
 
 # move some apps automatically to specific spaces
+yabai -m rule --add app="^Google Chrome$" title="Liam$" space=^1
+yabai -m rule --add app="^Google Chrome$" title="Liam \(ETHGlobal\)$" space=^4
+yabai -m rule --add app="^Google Chrome$" title="Liam \(Optimism\)$" space=^5
+
 yabai -m rule --add app="^Obsidian$" space=^2
 yabai -m rule --add app="^Cron$" space=^3
-yabai -m rule --add app="^Telegram$" space=6
-yabai -m rule --add app="^Spotify$" space=6
-yabai -m rule --add app="^Figma$" space=6
-yabai -m rule --add app="^Beeper$" space=6
-yabai -m rule --add app="^Signal$" space=6
+yabai -m rule --add app="^(Telegram|Spotify|Figma|Beeper|Signal|Books|Notion)$" space=6
+
+yabai -m config --space 6 layout stack
 
 yabai -m signal --add event=window_created action="~/.dotfiles/yabai/refresh.sh"
 yabai -m signal --add event=window_destroyed action="~/.dotfiles/yabai/refresh.sh"
