@@ -22,6 +22,7 @@
     ~/.vim/autoload: vim/autoload
     ~/.p10k.zsh: p10k/p10k.zsh
     ~/.zshrc: zsh/zshrc
+    ~/.hammerspoon: hammerspoon
     ~/.dotfiles/.git/hooks/post-checkout: git/hooks/post-checkout
     ~/.dotfiles/.git/hooks/post-merge: git/hooks/post-merge
     ~/.dotfiles/.git/hooks/post-commit: git/hooks/post-commit

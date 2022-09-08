@@ -1,10 +1,14 @@
 #!/usr/bin/env sh
 
+# load scripting additions
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 # global settings
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          autofocus
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               on
+yabai -m config window_topmost               off
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config window_shadow                float
@@ -29,15 +33,37 @@ yabai -m config window_gap                   0
 yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Stickies$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Command E$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Raycast$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Telegram$" sticky=on layer=above manage=off
 
 # sticky but not above all
 yabai -m rule --add app="^Tandem$" sticky=on layer=below manage=off
 
 # default float
-yabai -m rule --add app="^kitty$" manage=off
+# yabai -m rule --add app="^kitty$" manage=off
 yabai -m rule --add app="App Store" manage=off
 yabai -m rule --add app="System Preferences" manage=off
 yabai -m rule --add app="GifCapture" manage=off
+yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Software Update" title="Software Update" manage=off
+
+
+# applications with custom rules (main, day-to-day applications/fullscreen
+# applications that i want to stay behind floating windows)
+applications="(kitty|Figma|Google Chrome|Mighty|Cron|Linear|Obsidian|Beeper|Messages|Signal|Telegram|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
+
+# NOTE: you need to set the settings for the applications in the 
+#       list first, or else they don't apply properly and you
+#       can end up with some weird border/float/window behaviours
+
+# main applications get set to bottom layer to prevent them from
+# covering floating applications/popup windows
+yabai -m rule --add app="^${applications}$"     manage=on layer=below
+
+# any apps that aren't main applications get set to float
+# e.g. system preferences, colour meter
+yabai -m rule --add app!="^${applications}$"    manage=off border=off
 
 
 # https://github.com/koekeishiya/yabai/issues/366
@@ -54,5 +80,45 @@ yabai -m rule --add app="GifCapture" manage=off
 
 yabai -m signal --add app='^Google Chrome$' event='window_title_changed' \
   action="yabai -m rule --add label=$(uuidgen) app='^Google Chrome$' title='MetaMask Notification' manage=off"
+
+#
+# Configuring Spaces
+#
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 6)'); do
+  yabai -m space --destroy 7
+done
+
+function setup_space {
+  local idx="$1"
+  local name="$2"
+  local space=
+  echo "setup space $idx : $name"
+
+  space=$(yabai -m query --spaces --space "$idx")
+  if [ -z "$space" ]; then
+    yabai -m space --create
+  fi
+
+  yabai -m space "$idx" --label "$name"
+}
+
+setup_space 1 personal
+setup_space 2 notes
+setup_space 3 calendar
+setup_space 4 ethglobal
+setup_space 5 optimism
+setup_space 6 other
+
+# move some apps automatically to specific spaces
+yabai -m rule --add app="^Obsidian$" space=^2
+yabai -m rule --add app="^Cron$" space=^3
+yabai -m rule --add app="^Telegram$" space=6
+yabai -m rule --add app="^Spotify$" space=6
+yabai -m rule --add app="^Figma$" space=6
+yabai -m rule --add app="^Beeper$" space=6
+yabai -m rule --add app="^Signal$" space=6
+
+yabai -m signal --add event=window_created action="~/.dotfiles/yabai/refresh.sh"
+yabai -m signal --add event=window_destroyed action="~/.dotfiles/yabai/refresh.sh"
 
 echo "yabai configuration loaded.."
