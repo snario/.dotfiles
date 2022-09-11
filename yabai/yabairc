@@ -42,7 +42,7 @@ yabai -m rule --add app="^Raycast$" sticky=on layer=above
 
 # applications with custom rules (main, day-to-day applications/fullscreen
 # applications that i want to stay behind floating windows)
-applications="(Books|kitty|Figma|Google Chrome|Mighty|Cron|Linear|Obsidian|Beeper|Messages|Signal|Telegram|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
+applications="(Kindle|Books|kitty|Figma|Google Chrome|Mighty|Cron|Linear|Obsidian|Beeper|Messages|Signal|Telegram|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
 
 # NOTE: you need to set the settings for the applications in the 
 #       list first, or else they don't apply properly and you
@@ -100,13 +100,13 @@ setup_space 5 optimism
 setup_space 6 other
 
 # move some apps automatically to specific spaces
-yabai -m rule --add app="^Google Chrome$" title="Liam$" space=^1
-yabai -m rule --add app="^Google Chrome$" title="Liam \(ETHGlobal\)$" space=^4
-yabai -m rule --add app="^Google Chrome$" title="Liam \(Optimism\)$" space=^5
+yabai -m rule --add app="^(Google Chrome|Mighty)$" title="Liam$" space=^1
+yabai -m rule --add app="^(Google Chrome|Mighty)$" title="Liam \(ETHGlobal\)$" space=^4
+yabai -m rule --add app="^(Google Chrome|Mighty)$" title="Liam \(Optimism\)$" space=^5
 
 yabai -m rule --add app="^Obsidian$" space=^2
 yabai -m rule --add app="^Cron$" space=^3
-yabai -m rule --add app="^(Telegram|Spotify|Figma|Beeper|Signal|Books|Notion)$" space=6
+yabai -m rule --add app="^(Kindle|Telegram|Spotify|Figma|Beeper|Signal|Books|Notion)$" space=6
 
 yabai -m config --space 6 layout stack
 
