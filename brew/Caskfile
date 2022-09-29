@@ -1,0 +1,86 @@
+# Cask applications
+# Please copy these lines to your Brewfile and use with `brew-file install`.
+
+# Main tap repository for homebrew/cask
+tap homebrew/cask
+
+# Apps installed by Cask in homebrew/cask
+cask brave-browser # /Applications/Brave Browser.app
+cask calibre # /Applications/calibre.app
+cask choosy # /Applications/Choosy.app
+cask discord # /Applications/Discord.app
+cask google-chrome # /Applications/Google Chrome.app
+cask kitty # /Applications/kitty.app
+cask protonvpn # /Applications/ProtonVPN.app
+cask signal # /Applications/Signal.app
+cask spotify # /Applications/Spotify.app
+cask transmission # /Applications/Transmission.app
+cask vlc # /Applications/VLC.app
+
+# Cask is found, but no applications are found (could be fonts, system settins, or installed in other directory.)
+
+# There are new version for following applications.
+cask install google-cloud-sdk
+cask install ipfs
+cask install ngrok
+cask install zoom
+
+# Apps installed directly instead of by Cask in homebrew/cask
+#cask 1password # /Applications/1Password 7.app
+#cask around # /Applications/Around.app
+#cask beeper # /Applications/Beeper.app
+#cask cloudflare-warp # /Applications/Cloudflare WARP.app
+#cask cron # /Applications/Cron.app
+#cask docker # /Applications/Docker.app
+#cask ledger-live # /Applications/Ledger Live.app
+#cask linear # /Applications/Linear.app
+#cask linear-linear # /Applications/Linear.app
+#cask obsidian # /Applications/Obsidian.app
+#cask openphone # /Applications/OpenPhone.app
+#cask rotki # /Applications/rotki.app
+#cask superhuman # /Applications/Superhuman.app
+#cask tandem # /Applications/Tandem.app
+#cask todoist # /Applications/Todoist.app
+#cask trezor-bridge # /Applications/Utilities/TREZOR Bridge
+#cask tripmode # /Applications/TripMode.app
+#cask zoomus # /Applications/zoom.us.app
+
+# Casks in homebrew/cask-fonts
+tap homebrew/cask-fonts
+
+# Cask is found, but no applications are found.
+# (fonts, system settins, or installed in other directory.)
+cask font-roboto
+# There are new version for following applications.
+cask font-hack-nerd-font
+
+# Casks in homebrew/cask-versions
+tap homebrew/cask-versions
+
+# Apps installed by Cask in homebrew/cask-versions
+cask visual-studio-code-insiders # /Applications/Visual Studio Code - Insiders.app
+
+# Apps installed directly instead of by Cask in homebrew/cask-versions
+#cask docker-edge # /Applications/Docker.app
+
+# Apps installed from AppStore
+appstore 975937182 Fantastical (3.7.1) # /Applications/Fantastical.app
+appstore 682658836 GarageBand (10.4.6) # /Applications/GarageBand.app
+appstore 408981434 iMovie (10.3.4) # /Applications/iMovie.app
+appstore 409183694 Keynote (12.1) # /Applications/Keynote.app
+appstore 736189492 Notability (4.4.4) # /Applications/Notability.app
+appstore 409203825 Numbers (12.1) # /Applications/Numbers.app
+appstore 409201541 Pages (12.1) # /Applications/Pages.app
+appstore 425955336 Skitch (2.9) # /Applications/Skitch.app
+appstore 803453959 Slack (4.28.182) # /Applications/Slack.app
+appstore 747648890 Telegram (9.0) # /Applications/Telegram.app
+appstore 497799835 Xcode (14.0.1) # /Applications/Xcode.app
+
+# Apps installed but no casks are available
+# (System applications or directory installed.)
+# /Applications/Mighty.app
+# /Applications/Safari.app
+# /Applications/Adobe Lightroom.app
+# /Applications/Command E.app
+# /Applications/Farcaster.app
+# /Users/liam/Applications/Chrome Apps.localized
