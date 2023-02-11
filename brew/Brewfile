@@ -7,12 +7,16 @@ brew amazon-ecs-cli
 brew aom
 brew apr
 brew apr-util
+brew argon2
+brew aspell
 brew autoconf
 brew autojump
+brew automake
 brew awscli
 brew bazaar
 brew bdw-gc
 brew berkeley-db
+brew bison
 brew boost
 brew brotli
 brew c-ares
@@ -20,10 +24,12 @@ brew ca-certificates
 brew cairo
 brew ccache
 brew cheat
+brew chruby
 brew circleci
 brew cjson
 brew cmake
 brew cmocka
+brew curl
 brew dav1d
 brew docutils
 brew double-conversion
@@ -37,15 +43,18 @@ brew flac
 brew fmt
 brew folly
 brew fontconfig
+brew freetds
 brew freetype
 brew frei0r
 brew fribidi
 brew fzf
+brew gd
 brew gdbm
 brew gettext
 brew gflags
 brew gh
 brew giflib
+brew git
 brew glib
 brew glog
 brew gmp
@@ -79,11 +88,14 @@ brew leptonica
 brew libarchive
 brew libass
 brew libassuan
+brew libavif
 brew libb2
 brew libbluray
+brew libcbor
 brew libev
 brew libevent
 brew libffi
+brew libfido2
 brew libgcrypt
 brew libgpg-error
 brew libidn2
@@ -91,12 +103,14 @@ brew libksba
 brew libnghttp2
 brew libogg
 brew libpng
+brew libpq
 brew libpthread-stubs
 brew librist
 brew libsamplerate
 brew libsndfile
 brew libsodium
 brew libsoxr
+brew libssh2
 brew libtasn1
 brew libtiff
 brew libtool
@@ -116,6 +130,7 @@ brew libxext
 brew libxrender
 brew libyaml
 brew libyubikey
+brew libzip
 brew little-cms2
 brew lua
 brew lz4
@@ -127,10 +142,13 @@ brew mas
 brew mbedtls
 brew mpdecimal
 brew mpg123
+brew mysql-client
 brew ncurses
 brew nettle
 brew nghttp2
 brew node
+brew node-build
+brew nodenv
 brew npth
 brew nvm
 brew oniguruma
@@ -138,12 +156,14 @@ brew opencore-amr
 brew openexr
 brew openjdk
 brew openjpeg
+brew openldap
 brew openssl@1.1
 brew opus
 brew p11-kit
 brew pcre
 brew pcre2
 brew perl
+brew php
 brew pinentry
 brew pinentry-mac
 brew pipenv
@@ -158,9 +178,11 @@ brew python@3.8
 brew python@3.9
 brew rav1e
 brew readline
+brew rename
 brew rtmpdump
 brew rubberband
 brew ruby
+brew ruby-install
 brew sdl2
 brew six
 brew snappy
@@ -174,17 +196,20 @@ brew terraform
 brew tesseract
 brew the_silver_searcher
 brew theora
+brew tidy-html5
 brew tmux
 brew tmuxinator
 brew trash
 brew tree
 brew unbound
+brew unixodbc
 brew utf8proc
 brew vim
 brew wangle
 brew watchman
 brew webp
 brew wget
+brew wrk
 brew x264
 brew x265
 brew xorgproto
@@ -198,6 +223,7 @@ brew yq
 brew z3
 brew zeromq
 brew zimg
+brew zlib
 brew zstd
 
 tap homebrew/bundle
@@ -205,6 +231,7 @@ tap homebrew/bundle
 tap homebrew/cask-fonts
 cask font-hack-nerd-font
 cask font-roboto
+cask font-roboto-mono
 
 tap homebrew/cask-versions
 cask visual-studio-code-insiders
@@ -218,9 +245,12 @@ cask choosy
 cask discord
 cask google-chrome
 cask google-cloud-sdk
+cask hammerspoon
 cask ipfs
+cask kindle
 cask kitty
 cask messenger
+cask metabase
 cask ngrok
 cask protonvpn
 cask raycast
@@ -233,6 +263,9 @@ cask zoom
 tap clintmod/formulas
 brew macprefs
 
+tap cmacrae/formulae
+brew spacebar
+
 tap ethereum/ethereum
 
 tap github/gh
@@ -244,6 +277,9 @@ brew heroku-node
 tap koekeishiya/formulae
 brew skhd
 brew yabai --HEAD
+
+tap planetscale/tap
+brew pscale
 
 tap rcmdnk/file
 brew brew-file
@@ -261,6 +297,7 @@ appstore 409183694   Keynote          (12.2.1)
 appstore 736189492   Notability       (4.4.4)
 appstore 409203825   Numbers          (12.2.1)
 appstore 409201541   Pages            (12.2.1)
+appstore 1612708557  scaler           (1.6)
 appstore 425955336   Skitch           (2.9)
 appstore 803453959   Slack            (4.29.149)
 appstore 747648890   Telegram         (9.0)
