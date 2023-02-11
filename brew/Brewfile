@@ -25,7 +25,9 @@ brew cjson
 brew cmake
 brew cmocka
 brew dav1d
+brew docutils
 brew double-conversion
+brew edencommon
 brew fb303
 brew fbthrift
 brew ffmpeg
@@ -55,6 +57,7 @@ brew graphite2
 brew guile
 brew harfbuzz
 brew helm
+brew highway
 brew hiredis
 brew hopenpgp-tools
 brew htop
@@ -97,6 +100,7 @@ brew libsoxr
 brew libtasn1
 brew libtiff
 brew libtool
+brew libunibreak
 brew libunistring
 brew libusb
 brew libuv
@@ -122,6 +126,7 @@ brew macos-term-size
 brew mas
 brew mbedtls
 brew mpdecimal
+brew mpg123
 brew ncurses
 brew nettle
 brew nghttp2
@@ -137,6 +142,7 @@ brew openssl@1.1
 brew opus
 brew p11-kit
 brew pcre
+brew pcre2
 brew perl
 brew pinentry
 brew pinentry-mac
@@ -147,6 +153,7 @@ brew postgresql@14
 brew pyenv
 brew pyenv-virtualenv
 brew python@3.10
+brew python@3.11
 brew python@3.8
 brew python@3.9
 brew rav1e
@@ -213,8 +220,10 @@ cask google-chrome
 cask google-cloud-sdk
 cask ipfs
 cask kitty
+cask messenger
 cask ngrok
 cask protonvpn
+cask raycast
 cask signal
 cask spotify
 cask transmission
@@ -244,16 +253,15 @@ tap sambadevi/powerlevel9k
 tap somdoron/formulae
 
 # App Store applications
-appstore 1333542190  1Password 7      (7.9.6)
-appstore 1451544217  Adobe Lightroom  (5.5)
-appstore 975937182   Fantastical      (3.7.1)
-appstore 682658836   GarageBand       (10.4.6)
-appstore 408981434   iMovie           (10.3.4)
-appstore 409183694   Keynote          (12.1)
+appstore 1451544217  Adobe Lightroom  (6.1)
+appstore 975937182   Fantastical      (3.7.5)
+appstore 682658836   GarageBand       (10.4.7)
+appstore 408981434   iMovie           (10.3.5)
+appstore 409183694   Keynote          (12.2.1)
 appstore 736189492   Notability       (4.4.4)
-appstore 409203825   Numbers          (12.1)
-appstore 409201541   Pages            (12.1)
+appstore 409203825   Numbers          (12.2.1)
+appstore 409201541   Pages            (12.2.1)
 appstore 425955336   Skitch           (2.9)
-appstore 803453959   Slack            (4.28.182)
+appstore 803453959   Slack            (4.29.149)
 appstore 747648890   Telegram         (9.0)
-appstore 497799835   Xcode            (14.0.1)
+appstore 497799835   Xcode            (14.2)
