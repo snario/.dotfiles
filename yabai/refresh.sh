@@ -15,3 +15,29 @@ yabai -m config --space "$currspace" bottom_padding $padding
 yabai -m config --space "$currspace" left_padding $spadding
 yabai -m config --space "$currspace" right_padding $padding
 yabai -m config --space "$currspace" window_gap $padding
+
+# Destroy excess spaces
+# https://github.com/koekeishiya/yabai/issues/1631#issuecomment-1433401969
+
+function get_excess_spaces(){
+    local target=$1
+    echo $(yabai -m query --spaces | jq "length - $target")
+}
+
+function get_last_space(){
+    local display=$1
+    echo $(yabai -m query --spaces --display $display | jq '.[-1].index')
+}
+
+function destroy_excess_spaces(){
+    local target=$1
+    local display=$2
+    [ -z $display ] && display=1
+    excess=$(get_excess_spaces $target)
+    while (( excess > 0 )); do
+        yabai -m space --destroy $(get_last_space $display)
+        excess=$(get_excess_spaces $target)
+    done
+}
+
+destroy_excess_spaces $@
