@@ -29,11 +29,11 @@ brew circleci
 brew cjson
 brew cmake
 brew cmocka
+brew coreutils
 brew curl
 brew dav1d
 brew docutils
 brew double-conversion
-brew edencommon
 brew fb303
 brew fbthrift
 brew ffmpeg
@@ -114,7 +114,6 @@ brew libssh2
 brew libtasn1
 brew libtiff
 brew libtool
-brew libunibreak
 brew libunistring
 brew libusb
 brew libuv
@@ -127,12 +126,16 @@ brew libxau
 brew libxcb
 brew libxdmcp
 brew libxext
+brew libxml2
 brew libxrender
+brew libxslt
 brew libyaml
 brew libyubikey
 brew libzip
 brew little-cms2
+brew llvm
 brew lua
+brew luajit-openresty
 brew lz4
 brew lzo
 brew m4
@@ -158,8 +161,10 @@ brew openjdk
 brew openjpeg
 brew openldap
 brew openssl@1.1
+brew openssl@3
 brew opus
 brew p11-kit
+brew pango
 brew pcre
 brew pcre2
 brew perl
@@ -173,7 +178,6 @@ brew postgresql@14
 brew pyenv
 brew pyenv-virtualenv
 brew python@3.10
-brew python@3.11
 brew python@3.8
 brew python@3.9
 brew rav1e
@@ -191,6 +195,7 @@ brew speex
 brew sqlite
 brew srt
 brew subversion
+brew svt-av1
 brew tcl-tk
 brew terraform
 brew tesseract
@@ -249,11 +254,9 @@ cask hammerspoon
 cask ipfs
 cask kindle
 cask kitty
-cask messenger
 cask metabase
 cask ngrok
 cask protonvpn
-cask raycast
 cask signal
 cask spotify
 cask transmission
@@ -288,17 +291,25 @@ tap sambadevi/powerlevel9k
 
 tap somdoron/formulae
 
+# Other Homebrew packages
+brew aribb24
+brew cffi
+brew d2
+brew edencommon
+brew libunibreak
+brew pycparser
+brew python@3.11
+
 # App Store applications
-appstore 1451544217  Adobe Lightroom  (6.1)
-appstore 975937182   Fantastical      (3.7.5)
-appstore 682658836   GarageBand       (10.4.7)
+appstore 1451544217  Adobe Lightroom  (6.3.1)
+appstore 975937182   Fantastical      (3.7.12)
+appstore 682658836   GarageBand       (10.4.8)
 appstore 408981434   iMovie           (10.3.5)
-appstore 409183694   Keynote          (12.2.1)
+appstore 409183694   Keynote          (13.0)
 appstore 736189492   Notability       (4.4.4)
-appstore 409203825   Numbers          (12.2.1)
-appstore 409201541   Pages            (12.2.1)
-appstore 1612708557  scaler           (1.6)
+appstore 409203825   Numbers          (13.0)
+appstore 409201541   Pages            (13.0)
+appstore 1612708557  Scaler           (1.7)
 appstore 425955336   Skitch           (2.9)
-appstore 803453959   Slack            (4.29.149)
-appstore 747648890   Telegram         (9.0)
-appstore 497799835   Xcode            (14.2)
+appstore 803453959   Slack            (4.32.122)
+appstore 1475387142  Tailscale        (1.40.0)

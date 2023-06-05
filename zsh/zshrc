@@ -1,3 +1,41 @@
+# This is the configuration file for the Z shell (Zsh).
+
+# Basic Zsh Config
+# Set various options for the shell, such as command history behavior and the default editor.
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# Load the Powerlevel10k prompt initialization code, which provides a highly customizable prompt with various features.
+
+# Set various Zsh options to customize the behavior of the shell, such as command history behavior and the default editor.
+
+# Oh-My-Zsh Config
+# Load the Oh-My-Zsh framework and set various plugins and options for it.
+
+# Set the powerlevel10k theme.
+# Set the list of plugins.
+# Set the prompt format.
+# Disable auto-updates.
+
+# Load oh-my-zsh, with the plugins being sourced before it.
+
+# Custom Config
+# Load user-defined configurations to take priority over the default ones.
+
+# Enable all completions.
+# Load local config if present, for final overrides.
+
+# Set up Heroku autocomplete.
+# Set up FZF for Autojump to work.
+# Set up Autojump.
+# Set up Brewfile management.
+# Set up nvm.
+# Set up zsh-syntax-highlighting.
+# Load the PATH for the Google Cloud SDK.
+# Set up Pyenv and virtualenv-init.
+# Set up Foundry.
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -137,8 +175,6 @@ export NVM_DIR=/usr/local/Cellar/nvm/0.34.0 # $(brew --prefix nvm)
 # As per instructions, load this last so that it wraps ZLE widgets.
 source ~/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# source $HOME/.cargo/env
-
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
@@ -152,8 +188,6 @@ kitty + complete setup zsh | source /dev/stdin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 
 # https://github.com/nicolashery/mac-dev-setup#virtualenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -185,4 +219,16 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+# Add Foundry to PATH
 export PATH="$PATH:/Users/liam/.foundry/bin"
+
+# Add LLVM flags to Path for using bundled libc++
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# Add ccache to PATH
+export PATH="/usr/local/opt/ccache/libexec:$PATH"
+
+# Add Cargo
+source "$HOME/.cargo/env"

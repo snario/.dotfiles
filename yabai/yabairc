@@ -6,7 +6,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          autofocus
+yabai -m config focus_follows_mouse          autoraise
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_opacity               off
@@ -39,10 +39,11 @@ yabai -m rule --add app="^Finder$" sticky=on layer=above
 yabai -m rule --add app="^Stickies$" sticky=on layer=above 
 yabai -m rule --add app="^Command E$" sticky=on layer=above
 yabai -m rule --add app="^Raycast$" sticky=on layer=above
+yabai -m rule --add app="^Frame$" sticky=on layer=above
 
 # applications with custom rules (main, day-to-day applications/fullscreen
 # applications that i want to stay behind floating windows)
-applications="(Kindle|Books|kitty|Figma|Google Chrome|Arc|Mighty|Cron|Linear|Obsidian|Beeper|Messages|Messenger|Beeper|Signal|Telegram|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
+applications="(Kindle|Books|kitty|Discord|Figma|Google Chrome|Mighty|Arc|Cron|Visual Studio Code - Insiders|Linear|Obsidian|Beeper|Messages|Signal|Telegram|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
 
 # NOTE: you need to set the settings for the applications in the 
 #       list first, or else they don't apply properly and you
@@ -55,6 +56,8 @@ applications="(Kindle|Books|kitty|Figma|Google Chrome|Arc|Mighty|Cron|Linear|Obs
 # any apps that aren't main applications get set to float
 # e.g. system preferences, colour meter
 yabai -m rule --add app!="^${applications}$" manage=off border=off
+
+#yabai -m rule --add app="^(Linear|Cron)$" display=2
 
 # https://github.com/koekeishiya/yabai/issues/366
 # yabai -m signal --add \
@@ -71,46 +74,63 @@ yabai -m rule --add app!="^${applications}$" manage=off border=off
 yabai -m signal --add app='^Google Chrome$' event='window_title_changed' \
   action="yabai -m rule --add label=$(uuidgen) app='^Google Chrome$' title='MetaMask Notification' manage=off"
 
+yabai -m signal --add app='^Google Chrome$' event='window_title_changed' \
+  action="yabai -m rule --add label=$(uuidgen) app='^Google Chrome$' title='DevTools' manage=off"
+
+
+
 #
 # Configuring Spaces
 #
-for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 6)'); do
-  yabai -m space --destroy 7
+YABAI_MAX_SPACES=6
+
+for sp in {1..$YABAI_MAX_SPACES}; do
+  yabai -m query --spaces --space $sp &> /dev/null || yabai -m space --create
 done
 
 function setup_space {
   local idx="$1"
   local name="$2"
+  local display="$3"
   local space=
-  echo "setup space $idx : $name"
+  echo "setup space $idx : $name : $display"
 
-  space=$(yabai -m query --spaces --space "$idx")
+  space=$(yabai -m query --spaces --space "$idx" --display "$display")
   if [ -z "$space" ]; then
-    yabai -m space --create
+    yabai -m space --create --display "$display"
   fi
 
-  yabai -m space "$idx" --label "$name"
+  yabai -m space "$idx" --label "$name" --display "$display"
 }
 
-setup_space 1 personal
-setup_space 2 notes
-setup_space 3 calendar
-setup_space 4 ethglobal
-setup_space 5 optimism
-setup_space 6 other
+setup_space 1 liam 1
+setup_space 2 cal 1
+setup_space 3 eg 1
+setup_space 4 code 1
+setup_space 5 notes 2
+setup_space 6 other 2
 
 # move some apps automatically to specific spaces
-yabai -m rule --add app="^(Google Chrome|Mighty|Arc)$" title="Liam$" space=^1
-yabai -m rule --add app="^(Google Chrome|Mighty|Arc)$" title="Liam \(ETHGlobal\)$" space=^4
-yabai -m rule --add app="^(Google Chrome|Mighty|Arc)$" title="Liam \(Optimism\)$" space=^5
 
-yabai -m rule --add app="^Obsidian$" space=^2
-yabai -m rule --add app="^Cron$" space=^3
-yabai -m rule --add app="^(Kindle|Telegram|Spotify|Figma|Beeper|Messenger|Beeper|Signal|Books|Notion)$" space=6
+# Put back when Arc supports "title"
+## yabai -m rule --add app="^(Google Chrome|Arc|Mighty)$" title="Liam$" space=^1 
+## yabai -m rule --add app="^(Google Chrome|Arc|Mighty)$" title="Liam \(ETHGlobal\)$" space=^4 
+## yabai -m rule --add app="^(Google Chrome|Arc|Mighty)$" title="Liam \(OP Labs\)" space=^5 
+
+yabai -m rule --add app="^Obsidian$" space=^5
+yabai -m rule --add app="^Cron$" space=^2
+yabai -m rule --add app="^Linear$" space=^1 
+yabai -m rule --add app="^Visual Studio Code - Insiders$" space=^4
+yabai -m rule --add app="^(Kindle|Telegram|Spotify|Discord|Figma|Beeper|Signal|Books|Notion|Messages)$" space=^6
 
 yabai -m config --space 6 layout stack
 
+# Ensure windows are stacked appropriately
 yabai -m signal --add event=window_created action="~/.dotfiles/yabai/refresh.sh"
 yabai -m signal --add event=window_destroyed action="~/.dotfiles/yabai/refresh.sh"
+
+# Enforce the number of spaces regardless of the number of displays
+yabai -m signal --add event=display_added action="~/.dotfiles/yabai/refresh.sh $YABAI_MAX_SPACES"
+yabai -m signal --add event=display_removed action="~/.dotfiles/yabai/refresh.sh $YABAI_MAX_SPACES"
 
 echo "yabai configuration loaded.."
