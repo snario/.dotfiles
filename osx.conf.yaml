@@ -11,6 +11,4 @@
     ~/Library/Fonts/Hack-Regular.ttf: fonts/Hack-Regular.ttf
     ~/.skhdrc: skhd/skhdrc
     ~/.yabairc: yabai/yabairc
-    ~/.spacebarrc: spacebar/spacebarrc
-    ~/.mackup.cfg: mackup/mackup.cfg
     ~/.config/brewfile/Brewfile: brew/Brewfile

@@ -9,24 +9,14 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
 
-
 - link:
     ~/.gitconfig: git/config
-    ~/.config/htop/htoprc: htop/htoprc
-    ~/.config/kitty/kitty.conf: kitty/kitty.conf
-    ~/.nanorc: nano/nanorc
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.grc: grc
-    ~/.toprc: top/toprc
     ~/.vimrc: vim/vimrc
     ~/.vim/autoload: vim/autoload
-    ~/.p10k.zsh: p10k/p10k.zsh
     ~/.zshrc: zsh/zshrc
-    ~/.hammerspoon: hammerspoon
     ~/.dotfiles/.git/hooks/post-checkout: git/hooks/post-checkout
     ~/.dotfiles/.git/hooks/post-merge: git/hooks/post-merge
     ~/.dotfiles/.git/hooks/post-commit: git/hooks/post-commit
-    ~/bin/tm: tmux/tmux-menu
 
 - shell:
   - [printf "\n" | vim +PlugInstall +PlugUpdate +qall, Installing vim plugins]

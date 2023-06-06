@@ -6,7 +6,7 @@
 if [[ $OSTYPE == linux-* ]]; then
   export FZF_PREFIX=/opt
 elif [[ $OSTYPE == darwin* ]]; then
-  export FZF_PREFIX=/usr/local/opt
+  export FZF_PREFIX=$(brew --prefix)/opt
 else
   # FZF not available
   return 0

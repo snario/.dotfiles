@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Minimal install, for servers where I am not primary.
 set -e
 

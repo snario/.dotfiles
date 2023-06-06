@@ -2,9 +2,6 @@
 	path = oh-my-zsh
 	url = https://github.com/issmirnov/oh-my-zsh.git
 	ignore = dirty
-[submodule "zsh-syntax-highlighting"]
-	path = zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
@@ -12,6 +9,3 @@
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "stackline"]
-	path = hammerspoon/stackline
-	url = https://github.com/AdamWagner/stackline

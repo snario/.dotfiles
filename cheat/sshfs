@@ -1,2 +1,0 @@
-# Mount remote server. Note the trailing colon.
-sshfs user@host.tld: /mnt/sshfs

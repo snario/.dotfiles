@@ -1,8 +1,0 @@
-# Find a process
-pgrep -f process_name
-
-# kill a process
-pkill -f process name
-
-# kill unresponsive window
-xkill # turns mouse into clicker of death

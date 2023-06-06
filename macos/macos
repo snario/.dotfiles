@@ -146,7 +146,8 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 # Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+# chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+# TODO: Does not work on Macbook Pro 2023
 
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes

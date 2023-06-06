@@ -1,9 +1,6 @@
 # restart yabai
 ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
-# open terminal
-cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty -c ~/.config/kitty/kitty.conf --single-instance -d ~
-
 # focus window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south

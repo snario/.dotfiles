@@ -19,5 +19,5 @@ if [[ $OSTYPE == 'linux-gnu' ]]; then
 elif [[ $OSTYPE == darwin* ]]; then
     "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "osx${CONFIG_SUFFIX}"
 fi
-set +e
 
+set +e
