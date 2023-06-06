@@ -26,7 +26,6 @@ cask figma
 cask linear-linear
 cask obsidian
 cask protonvpn
-cask raycast
 cask signal
 cask spotify
 cask telegram
@@ -43,6 +42,15 @@ brew brew-file
 
 # Other Cask applications
 cask visual-studio-code-insiders
+
+# Other Homebrew packages
+brew aribb24
+brew cffi
+brew d2
+brew edencommon
+brew libunibreak
+brew pycparser
+brew python@3.11
 
 # App Store applications
 appstore 682658836 GarageBand (10.4.6)
