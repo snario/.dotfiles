@@ -117,10 +117,10 @@ setup_space 6 other 2
 ## yabai -m rule --add app="^(Google Chrome|Arc|Mighty)$" title="Liam \(ETHGlobal\)$" space=^4 
 ## yabai -m rule --add app="^(Google Chrome|Arc|Mighty)$" title="Liam \(OP Labs\)" space=^5 
 
-yabai -m rule --add app="^Obsidian$" space=^5
-yabai -m rule --add app="^Cron$" space=^2
-yabai -m rule --add app="^Linear$" space=^1 
-yabai -m rule --add app="^Visual Studio Code - Insiders$" space=^4
+yabai -m rule --add app="^Obsidian$" space=^2
+yabai -m rule --add app="^Cron$" space=^3
+yabai -m rule --add app="^Linear$" space=^2
+yabai -m rule --add app="^Visual Studio Code - Insiders$" space=^5
 yabai -m rule --add app="^(Kindle|Telegram|Spotify|Discord|Figma|Beeper|Signal|Books|Notion|Messages)$" space=^6
 
 yabai -m config --space 6 layout stack

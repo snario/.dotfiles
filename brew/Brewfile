@@ -15,6 +15,7 @@ brew python@3.11
 brew readline
 brew sqlite
 brew the_silver_searcher
+brew tree
 brew xz
 
 tap homebrew/cask
@@ -22,13 +23,17 @@ cask 1password
 cask arc
 cask beeper
 cask cron
+cask docker
 cask figma
 cask linear-linear
 cask obsidian
 cask protonvpn
+cask raycast
 cask signal
 cask spotify
 cask telegram
+cask transmission
+cask tripmode
 cask warp
 
 tap homebrew/services
@@ -42,15 +47,6 @@ brew brew-file
 
 # Other Cask applications
 cask visual-studio-code-insiders
-
-# Other Homebrew packages
-brew aribb24
-brew cffi
-brew d2
-brew edencommon
-brew libunibreak
-brew pycparser
-brew python@3.11
 
 # App Store applications
 appstore 682658836 GarageBand (10.4.6)

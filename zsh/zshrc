@@ -141,13 +141,13 @@ autoload -U compinit && compinit
 #  test -f $HEROKU_AC_ZSH_SETUP_PATH &&
 #  source $HEROKU_AC_ZSH_SETUP_PATH
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # fzf setup for autojump to work
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -s $(brew --prefix)/share/autojump/autojump.zsh ]] && . $(brew --prefix)/share/autojump/autojump.zsh
 
 # As per instructions, load this last so that it wraps ZLE widgets.
 source ~/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
