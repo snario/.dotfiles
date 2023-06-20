@@ -3,11 +3,18 @@
 
 tap homebrew/core
 brew autojump
+brew brotli
+brew c-ares
 brew ca-certificates
 brew fzf
 brew gh
+brew icu4c
 brew jq
+brew libnghttp2
+brew libuv
+brew lz4
 brew mpdecimal
+brew node
 brew oniguruma
 brew openssl@1.1
 brew pcre
@@ -16,7 +23,10 @@ brew readline
 brew sqlite
 brew the_silver_searcher
 brew tree
+brew vercel-cli
 brew xz
+brew zig
+brew zstd
 
 tap homebrew/cask
 cask 1password
@@ -35,6 +45,7 @@ cask telegram
 cask transmission
 cask tripmode
 cask warp
+cask zoom
 
 tap homebrew/services
 
