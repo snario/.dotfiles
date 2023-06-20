@@ -2,7 +2,7 @@
 ctrl + alt + cmd - r : yabai --restart-service && skhd --restart-service
 
 # open terminal
-cmd + shift - return : /Applications/Kitty.app/Contents/MacOS/kitty -c ~/.config/kitty/kitty.conf --single-instance -d ~
+cmd + shift - return : open /Applications/Warp.app
 
 # focus window
 alt - h : yabai -m window --focus west
