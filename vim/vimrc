@@ -4,8 +4,11 @@ filetype plugin indent on    " required
 " The following block sets up vim-plug. Check github for README.
 call plug#begin('~/.vim/plugged')
 
+
+set re=0
+
 " colors
-Plug 'jacoborus/tender'
+Plug 'morhetz/gruvbox'
 
 " statusline
 Plug 'itchyny/lightline.vim'
@@ -45,6 +48,8 @@ Plug 'https://github.com/tpope/vim-sleuth' " proper tabstops
 " git helpers
 Plug 'https://github.com/jreybert/vimagit',                       {'branch': 'next', 'on': ['Magit', 'MagitOnly']}
 Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/Eliot00/git-lens.vim'
+let g:GIT_LENS_ENABLED = 1
 
 " basic system utils
 Plug 'https://github.com/tpope/vim-eunuch'
@@ -69,7 +74,7 @@ set ruler                       " show the cursor position all the time
 set backspace=indent,eol,start  " make that backspace key work the way it should
 "set background=dark             " Use colours that work well on a dark background (Console is usually black)
 "set showmode                    " show the current mode
-"set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
+set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
 
 
 "" Leader
@@ -89,7 +94,9 @@ set clipboard=unnamedplus
 map <leader>y "+y
 
 "" Colors
-colorscheme tender
+colorscheme gruvbox
+set background=dark
+
 "hi Visual guibg=#5f5f5f ctermbg=59            " manual override.
 hi Visual term=reverse cterm=reverse guibg=#5f5f5f
 
@@ -117,30 +124,6 @@ set smartcase                   " ... unless they contain at least one capital l
 
 """ faster loads for gitgutter
 set updatetime=250
-
-""" lightline settings """
-" enable tender theme
-let g:tender_lightline = 1
-" set lightline theme
-let g:lightline = {
-    \ 'colorscheme': 'tender',
-    \ 'component' : {
-    \   'readonly': '%{&filetype=="help"?"":&readonly?"-":""}',
-    \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-    \ },
-    \ 'component_visible_condition': {
-    \   'readonly': '(&filetype!="help"&& &readonly)',
-    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
-    \ },
-    \ 'active' : {
-    \    'right' : [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ]
-    \ },
-  \ }
-if !has('gui_running')
-  set t_Co=256
-endif
-set laststatus=2
-set noshowmode
 
 " http://www.blaenkdenum.com/posts/a-simpler-vim-statusline/
 " mode aware cursors (NOTE: Gui Only)

@@ -2,66 +2,220 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew abseil
+brew aom
+brew aribb24
 brew autojump
+brew bash
+brew boost
 brew brotli
 brew c-ares
 brew ca-certificates
+brew cairo
+brew cjson
+brew cmake
+brew coreutils
+brew dav1d
+brew direnv
+brew docker
+brew docker-completion
+brew duckdb
+brew ffmpeg
+brew flac
+brew flyctl
+brew fontconfig
+brew freetype
+brew frei0r
+brew fribidi
 brew fzf
+brew gettext
 brew gh
-brew icu4c
+brew giflib
+brew glib
+brew gmp
+brew gnutls
+brew graphite2
+brew grizzly
+brew harfbuzz
+brew highway
+brew htop
+brew httpie
+brew imath
+brew imessage-exporter
+brew jpeg-turbo
+brew jpeg-xl
 brew jq
+brew just
+brew k9s
+brew krb5
+brew lame
+brew leptonica
+brew libarchive
+brew libass
+brew libb2
+brew libbluray
+brew libcbor
+brew libdeflate
+brew libevent
+brew libfido2
+brew libidn2
+brew libmicrohttpd
 brew libnghttp2
+brew libogg
+brew libpng
+brew librist
+brew libsamplerate
+brew libsndfile
+brew libsodium
+brew libsoxr
+brew libssh
+brew libtasn1
+brew libtiff
+brew libunibreak
+brew libunistring
+brew libusb
 brew libuv
+brew libvidstab
+brew libvmaf
+brew libvorbis
+brew libvpx
+brew libx11
+brew libxau
+brew libxcb
+brew libxdmcp
+brew libxext
+brew libxrender
+brew libyaml
+brew little-cms2
+brew llm
+brew lnav
 brew lz4
+brew lzo
+brew mbedtls
 brew mpdecimal
+brew mpg123
+brew mysql
+brew mysql-client
+brew ncurses
+brew nettle
 brew node
 brew oniguruma
+brew opencore-amr
+brew openexr
+brew openjpeg
 brew openssl@1.1
+brew openssl@3
+brew opus
+brew p11-kit
+brew pandoc
+brew pango
 brew pcre
+brew pcre2
+brew pixman
+brew pkgconf
+brew postgresql@14
+brew protobuf
+brew pscale
+brew python-packaging
 brew python@3.11
+brew python@3.12
+brew python@3.13
+brew rav1e
 brew readline
+brew rubberband
+brew ruby@2.7
+brew sdl2
+brew snappy
+brew source-highlight
+brew speedtest-cli
+brew speex
 brew sqlite
+brew srt
+brew svt-av1
+brew tesseract
 brew the_silver_searcher
+brew theora
+brew tmux
 brew tree
+brew unbound
+brew utf8proc
 brew vercel-cli
+brew webp
+brew x264
+brew x265
+brew xorgproto
+brew xvid
 brew xz
+brew yarn
+brew youtube-dl --HEAD
+brew z3
+brew zeromq
 brew zig
+brew zimg
+brew zlib
 brew zstd
 
 tap homebrew/cask
 cask 1password
+cask adobe-creative-cloud
+cask alacritty
 cask arc
 cask beeper
-cask cron
-cask docker
+cask brave-browser
+cask cloudflare-warp
 cask figma
+cask gfxcardstatus
 cask linear-linear
+cask metabase
+cask notion-calendar
 cask obsidian
+cask orbstack
 cask protonvpn
 cask raycast
 cask signal
 cask spotify
+cask tableplus
 cask telegram
 cask transmission
 cask tripmode
+cask vlc
 cask warp
 cask zoom
 
 tap homebrew/services
 
+tap dbt-labs/dbt-cli
+
+tap derailed/k9s
+
 tap koekeishiya/formulae
 brew skhd
 brew yabai
 
+tap kurtosis-tech/tap
+brew kurtosis-cli
+
+tap localstack/tap
+brew localstack-cli
+
+tap planetscale/tap
+
 tap rcmdnk/file
 brew brew-file
+
+# Other Homebrew packages
+brew icu4c
+brew python-certifi
 
 # Other Cask applications
 cask visual-studio-code-insiders
 
 # App Store applications
-appstore 682658836 GarageBand (10.4.6)
-appstore 408981434 iMovie (10.3.4)
-appstore 409183694 Keynote (12.1)
-appstore 409203825 Numbers (12.1)
-appstore 409201541 Pages (12.1)
+appstore 1569813296 1Password for Safari (8.10.62)
+appstore 1358823008 Flighty (4.4.0)
+appstore 682658836 GarageBand (10.4.12)
+appstore 408981434 iMovie (10.4.3)
+appstore 409183694 Keynote (14.3)
+appstore 409203825 Numbers (14.3)
+appstore 409201541 Pages (14.3)
+appstore 1475387142 Tailscale (1.80.2)

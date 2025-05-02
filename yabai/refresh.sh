@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-number_of_windows=$(yabai -m query --windows --space | /usr/local/bin/jq 'length')
-number_of_stacked=$(yabai -m query --windows --space | /usr/local/bin/jq -c 'map(select(."stack-index" != 0)) | length')
-currspace=$(yabai -m query --spaces --space | /usr/local/bin/jq '.index')
+number_of_windows=$(yabai -m query --windows --space | jq 'length')
+number_of_stacked=$(yabai -m query --windows --space | jq -c 'map(select(."stack-index" != 0)) | length')
+currspace=$(yabai -m query --spaces --space | jq '.index')
 
 padding=0
 spadding=40
@@ -10,11 +10,11 @@ spadding=40
 [[ "$number_of_windows" -eq 1 ]] && padding=0
 [[ "$number_of_stacked" = 0 ]] && spadding=$padding
 
-yabai -m config --space "$currspace" top_padding $padding
-yabai -m config --space "$currspace" bottom_padding $padding
-yabai -m config --space "$currspace" left_padding $spadding
-yabai -m config --space "$currspace" right_padding $padding
-yabai -m config --space "$currspace" window_gap $padding
+yabai -m config --space "$currspace" top_padding 10
+yabai -m config --space "$currspace" bottom_padding 50
+yabai -m config --space "$currspace" left_padding 10
+yabai -m config --space "$currspace" right_padding 270
+yabai -m config --space "$currspace" window_gap 10
 
 # Destroy excess spaces
 # https://github.com/koekeishiya/yabai/issues/1631#issuecomment-1433401969
@@ -39,5 +39,12 @@ function destroy_excess_spaces(){
         excess=$(get_excess_spaces $target)
     done
 }
+
+# Resize the Stickies window to 800x600 pixels
+# Resize each Stickies window to 800x600 pixels
+display_width=$(yabai -m query --displays | jq '.[0].frame.w')
+yabai -m query --windows | jq -r '.[] | select(.app == "Stickies") | .id' | while read -r stickies_id; do
+  yabai -m window "$stickies_id" --resize abs:50:200 --move abs:$((display_width - 160)):420
+done
 
 destroy_excess_spaces $@

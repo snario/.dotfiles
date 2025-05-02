@@ -35,9 +35,8 @@ for elem in $USER_BIN/*; do
 done
 unsetopt NULL_GLOB
 
-
-RUBY="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin"
+RUBY="/opt/homebrew/opt/ruby@2.7/bin"
 NPM="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 
 # export final result
-export PATH="$USER_BIN:$DOT_BIN:$TEX:$GOPATH/bin:$GOLANG_BIN:$FZF_PREFIX/fzf/bin:$SYSTEM:$VSCODE:$RUBY:$NPM"
+export PATH="$HOME/.local/bin:$RUBY:$USER_BIN:$DOT_BIN:$TEX:$GOPATH/bin:$GOLANG_BIN:$FZF_PREFIX/fzf/bin:$SYSTEM:$VSCODE:$NPM"

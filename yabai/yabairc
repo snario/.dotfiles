@@ -1,91 +1,62 @@
-#layer=above !/usr/bin/env sh
+#sub-layer=above !/usr/bin/env sh
 
 # load scripting additions
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
-yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          autoraise
-yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
-yabai -m config window_opacity               off
-yabai -m config window_opacity_duration      0.0
-yabai -m config window_shadow                float
-yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        1.0
-yabai -m config split_ratio                  0.50
-yabai -m config auto_balance                 on
-yabai -m config mouse_modifier               fn
-yabai -m config mouse_action1                move
-yabai -m config mouse_action2                resize
-yabai -m config window_border on
-yabai -m config window_border_width 6
-yabai -m config active_window_border_color   0xff3d464d     
-yabai -m config normal_window_border_color   0xff000000     
-
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse autoraise
+yabai -m config window_placement second_child
+yabai -m config window_opacity off
+yabai -m config window_opacity_duration 0.0
+#yabai -m config window_shadow 1
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 1.0
+yabai -m config split_ratio 0.50
+yabai -m config auto_balance on
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
 
 # general space settings
-yabai -m config layout                       bsp
-yabai -m config top_padding                  0
-yabai -m config bottom_padding               0
-yabai -m config left_padding                 0
-yabai -m config right_padding                0
-yabai -m config window_gap                   0
+yabai -m config layout bsp
+yabai -m config top_padding 10
+yabai -m config bottom_padding 50
+yabai -m config left_padding 10
+yabai -m config right_padding 270
+yabai -m config window_gap 10
 
 # keep these ones on top of all other windows
-# yabai -m rule --add app="^zoom.*$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above
-yabai -m rule --add app="^Stickies$" sticky=on layer=above 
-yabai -m rule --add app="^Command E$" sticky=on layer=above
-yabai -m rule --add app="^Raycast$" sticky=on layer=above
-yabai -m rule --add app="^Frame$" sticky=on layer=above
+# yabai -m rule --add app="^zoom.*$" sticky=on sub-layer=above manage=off
+yabai -m rule --add app="^(Finder|Raycast|Frame|ChatGPT)$" sticky=on sub-layer=above
+yabai -m rule --apply app="^(Finder|Raycast|Frame|ChatGPT|Signal|Telegram|Beeper|Messages)$" sticky=on sub-layer=above
+
 
 # applications with custom rules (main, day-to-day applications/fullscreen
 # applications that i want to stay behind floating windows)
-applications="(Kindle|Books|kitty|Discord|Figma|Google Chrome|Mighty|Arc|Cron|Visual Studio Code - Insiders|Linear|Obsidian|Beeper|Messages|Signal|Telegram|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
+applications="(Alacritty|Kindle|Books|Discord|Figma|Google Chrome|Mighty|Arc|Amie|Visual Studio Code - Insiders|Linear|Obsidian|Beeper|Messages|Signal|Notion|Preview|Telegram|Terminal|QuickTime|Player|Spotify|Slack)"
 
-# NOTE: you need to set the settings for the applications in the 
+# NOTE: you need to set the settings for the applications in the
 #       list first, or else they don't apply properly and you
 #       can end up with some weird border/float/window behaviours
 
 # main applications get set to bottom layer to prevent them from
 # covering floating applications/popup windows
-# yabai -m rule --add app="^${applications}$" manage=on layer=below
+# yabai -m rule --add app="^${applications}$" manage=on sub-layer=below
 
 # any apps that aren't main applications get set to float
 # e.g. system preferences, colour meter
-yabai -m rule --add app!="^${applications}$" manage=off border=off
-
-#yabai -m rule --add app="^(Linear|Cron)$" display=2
-
-# https://github.com/koekeishiya/yabai/issues/366
-# yabai -m signal --add \
-#   label=keep-metamask-small \
-#   event=window_created \
-#   app='^Google Chrome$' \
-#   title='^MetaMask Notification$' \
-#   action='
-#     yabai -m query --windows --window $YABAI_WINDOW_ID \
-#     | jq -re ".floating == 0" \
-#     && yabai -m window $YABAI_WINDOW_ID --toggle float
-#   '
-
-yabai -m signal --add app='^Google Chrome$' event='window_title_changed' \
-  action="yabai -m rule --add label=$(uuidgen) app='^Google Chrome$' title='MetaMask Notification' manage=off"
-
-yabai -m signal --add app='^Google Chrome$' event='window_title_changed' \
-  action="yabai -m rule --add label=$(uuidgen) app='^Google Chrome$' title='DevTools' manage=off"
-
-
+yabai -m rule --add app!="^${applications}$" manage=off
+yabai -m rule --apply app!="^${applications}$" manage=off
 
 #
 # Configuring Spaces
 #
-YABAI_MAX_SPACES=6
+YABAI_MAX_SPACES=9
 
 for sp in {1..$YABAI_MAX_SPACES}; do
-  yabai -m query --spaces --space $sp &> /dev/null || yabai -m space --create
+  yabai -m query --spaces --space $sp &>/dev/null || yabai -m space --create
 done
 
 function setup_space {
@@ -104,23 +75,20 @@ function setup_space {
 }
 
 setup_space 1 liam 1
-setup_space 2 cal 1
-setup_space 3 eg 1
-setup_space 4 code 1
-setup_space 5 notes 2
-setup_space 6 other 2
+setup_space 2 notes 1
+setup_space 3 cal 1
+setup_space 4 eg 1
+setup_space 5 pragma 1
+setup_space 6 other 1
+
+#yabai -m rule --add display=2 manage=off
 
 # move some apps automatically to specific spaces
 
-# Put back when Arc supports "title"
-## yabai -m rule --add app="^(Google Chrome|Arc|Mighty)$" title="Liam$" space=^1 
-## yabai -m rule --add app="^(Google Chrome|Arc|Mighty)$" title="Liam \(ETHGlobal\)$" space=^4 
-## yabai -m rule --add app="^(Google Chrome|Arc|Mighty)$" title="Liam \(OP Labs\)" space=^5 
-
 yabai -m rule --add app="^Obsidian$" space=^2
-yabai -m rule --add app="^Cron$" space=^3
+yabai -m rule --add app="^(Amie|Notion Calendar)$" space=^3
 yabai -m rule --add app="^Linear$" space=^2
-yabai -m rule --add app="^Visual Studio Code - Insiders$" space=^5
+yabai -m rule --add app="^(Visual Studio Code - Insiders)$" space=^7
 yabai -m rule --add app="^(Kindle|Telegram|Spotify|Discord|Figma|Beeper|Signal|Books|Notion|Messages)$" space=^6
 
 yabai -m config --space 6 layout stack
@@ -132,5 +100,12 @@ yabai -m signal --add event=window_destroyed action="~/.dotfiles/yabai/refresh.s
 # Enforce the number of spaces regardless of the number of displays
 yabai -m signal --add event=display_added action="~/.dotfiles/yabai/refresh.sh $YABAI_MAX_SPACES"
 yabai -m signal --add event=display_removed action="~/.dotfiles/yabai/refresh.sh $YABAI_MAX_SPACES"
+
+# Stickies fixed
+yabai -m rule --add app="Stickies" title=".*" \
+    sticky=off sub-layer=above \
+    grid="10:15:-1:2:1:1"
+yabai -m rule --apply app="Stickies" grid="10:15:-1:2:1:1"
+
 
 echo "yabai configuration loaded.."

@@ -1,8 +1,8 @@
 # restart yabai
-ctrl + alt + cmd - r : yabai --restart-service && skhd --restart-service
+ctrl + alt + cmd - r : ~/.dotfiles/yabai/restart.sh && skhd --restart-service
 
 # open terminal
-cmd + shift - return : open /Applications/Warp.app
+cmd + shift - return : open /Applications/Alacritty.app
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -62,6 +62,7 @@ alt - 3 : yabai -m space --focus 3
 alt - 4 : yabai -m space --focus 4
 alt - 5 : yabai -m space --focus 5
 alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
 
 # send window to desktop and follow focus
 shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
@@ -73,6 +74,7 @@ shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
 shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
 shift + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
 shift + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
+shift + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
 
 # focus monitor
 ctrl + alt - x  : yabai -m display --focus recent
@@ -150,6 +152,7 @@ alt - s : yabai -m window --toggle sticky
 
 # toggle topmost (keep above other windows)
 alt - o : yabai -m window --toggle topmost
+alt - h : yabai -m window --toggle bottom
 
 # toggle sticky, topmost and resize to picture-in-picture size
 alt - p : yabai -m window --toggle sticky;\

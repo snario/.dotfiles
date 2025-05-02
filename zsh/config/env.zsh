@@ -18,3 +18,7 @@ export MACPREFS_BACKUP_DIR="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 # Docker
 export COMPOSE_DOCKER_CLI_BUILD=1;
 export DOCKER_BUILDKIT=1
+
+# Gem
+export GEM_HOME="$HOME/.gem"
+
