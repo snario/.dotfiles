@@ -21,21 +21,21 @@ yabai -m config mouse_action2 resize
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config top_padding 10
-yabai -m config bottom_padding 50
-yabai -m config left_padding 10
-yabai -m config right_padding 270
-yabai -m config window_gap 10
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 5
 
 # keep these ones on top of all other windows
 # yabai -m rule --add app="^zoom.*$" sticky=on sub-layer=above manage=off
-yabai -m rule --add app="^(Finder|Raycast|Frame|ChatGPT)$" sticky=on sub-layer=above
-yabai -m rule --apply app="^(Finder|Raycast|Frame|ChatGPT|Signal|Telegram|Beeper|Messages)$" sticky=on sub-layer=above
+yabai -m rule --add app="^(Finder|Raycast|Frame)$" sticky=on #sub-layer=above
+yabai -m rule --apply app="^(Finder|Raycast|Frame)$" sticky=on #sub-layer=above
 
 
 # applications with custom rules (main, day-to-day applications/fullscreen
 # applications that i want to stay behind floating windows)
-applications="(Alacritty|Kindle|Books|Discord|Figma|Google Chrome|Mighty|Arc|Amie|Visual Studio Code - Insiders|Linear|Obsidian|Beeper|Messages|Signal|Notion|Preview|Telegram|Terminal|QuickTime|Player|Spotify|Slack)"
+applications="(Alacritty|Granola|Kindle|Ghostty|Notion Calendar|ChatGPT|Telegram|Signal|Signal Beta|WhatsApp|Messages|Books|Discord|Figma|Google Chrome|Mighty|Arc|Amie|Visual Studio Code - Insiders|Linear|Obsidian|Notion|Preview|Terminal|QuickTime|Player|Spotify|Slack)"
 
 # NOTE: you need to set the settings for the applications in the
 #       list first, or else they don't apply properly and you
@@ -89,13 +89,15 @@ yabai -m rule --add app="^Obsidian$" space=^2
 yabai -m rule --add app="^(Amie|Notion Calendar)$" space=^3
 yabai -m rule --add app="^Linear$" space=^2
 yabai -m rule --add app="^(Visual Studio Code - Insiders)$" space=^7
-yabai -m rule --add app="^(Kindle|Telegram|Spotify|Discord|Figma|Beeper|Signal|Books|Notion|Messages)$" space=^6
-
-yabai -m config --space 6 layout stack
+yabai -m rule --add app="^(Kindle|Telegram|Spotify|Discord|Figma|Beeper|Signal|Books|Notion|Messages|WhatsApp)$" space=^6
 
 # Ensure windows are stacked appropriately
 yabai -m signal --add event=window_created action="~/.dotfiles/yabai/refresh.sh"
 yabai -m signal --add event=window_destroyed action="~/.dotfiles/yabai/refresh.sh"
+
+# Fix Ghostty tabs being treated as windows
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
 # Enforce the number of spaces regardless of the number of displays
 yabai -m signal --add event=display_added action="~/.dotfiles/yabai/refresh.sh $YABAI_MAX_SPACES"
